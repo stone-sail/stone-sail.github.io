@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://stone-sail.github.io/2022/06/12/malloc-tutorial/</loc>
+    <lastmod>2022-06-12</lastmod>
+  </url>
+  <url>
     <loc>http://stone-sail.github.io/2022/06/09/hello-world/</loc>
     <lastmod>2022-06-09</lastmod>
   </url>
