@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/06/09/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>malloc实现概述</title>
     <url>/2022/06/12/malloc-tutorial/</url>
     <content><![CDATA[<h2 id="1-malloc-简介"><a href="#1-malloc-简介" class="headerlink" title="1. malloc 简介"></a>1. malloc 简介</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">malloc</span><span class="params">(<span class="type">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
 
 <p>malloc() 函数用来动态的分配内存空间:<br>【参数说明】size 为需要分配的内存空间的大小，以字节（Byte）计<br>【返回值】分配成功返回指向该内存的地址，失败则返回 NULL<br>【函数说明】malloc在<code>堆</code>区分配一块指定大小的内存空间，用来存放数据。这块内存空间在函数执行完成后不会被初始化，它们的值是未知的</p>
-<img src="/images/malloc-tutorial/IMG_20220612-165355450.png" width="450">
+<img src="/images/malloc-tutorial/IMG_20220612-165355450.png" width="500" height="450">
 
 
 <p>实现malloc的功能可以有很多方法，本文使用<strong>sbrk</strong>来管理堆上内存分配。</p>
@@ -44,7 +26,7 @@
 <h2 id="3-malloc-v2-0"><a href="#3-malloc-v2-0" class="headerlink" title="3. malloc v2.0"></a>3. malloc v2.0</h2><h3 id="3-1-内存数据结构"><a href="#3-1-内存数据结构" class="headerlink" title="3.1 内存数据结构"></a>3.1 内存数据结构</h3><ol>
 <li>解决第一个问题的常见技巧是将相关数据写入meta data并存储在我们返回的指针下方的某个空间中，如下图所示：</li>
 </ol>
-<img src="/images/malloc-tutorial/IMG_20220612-180309917.png" width="600" height="200">
+<img src="/images/malloc-tutorial/IMG_20220612-180309917.png" width="500" height="300">
 
 <blockquote>
 <p>假设现在堆顶指向0x1000，需要申请0x400个字节。malloc v1.0调用sbrk申请0x400个字节并且会返回指向0x1000的指针。如果我们存储大小为0x10个自己的<code>meta data</code>，则需要返回0x1010给调用方，0x1000~0x1010则存储meta data。</p>
@@ -105,5 +87,23 @@
         <tag>system</tag>
         <tag>c++</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/06/09/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
