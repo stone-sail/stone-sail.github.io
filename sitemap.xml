@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://stone-sail.github.io/2022/06/25/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</loc>
+    
+    <lastmod>2022-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://stone-sail.github.io/2022/06/12/malloc-tutorial/</loc>
     
     <lastmod>2022-06-12</lastmod>
@@ -40,36 +49,43 @@
 
   <url>
     <loc>http://stone-sail.github.io/</loc>
-    <lastmod>2022-06-12</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://stone-sail.github.io/tags/memory/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://stone-sail.github.io/tags/malloc/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://stone-sail.github.io/tags/system/</loc>
-    <lastmod>2022-06-12</lastmod>
+    <loc>http://stone-sail.github.io/tags/tools/</loc>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://stone-sail.github.io/tags/c/</loc>
-    <lastmod>2022-06-12</lastmod>
+    <lastmod>2022-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://stone-sail.github.io/tags/memory/</loc>
+    <lastmod>2022-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://stone-sail.github.io/tags/malloc/</loc>
+    <lastmod>2022-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://stone-sail.github.io/tags/system/</loc>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -77,8 +93,15 @@
 
   
   <url>
+    <loc>http://stone-sail.github.io/categories/tools/</loc>
+    <lastmod>2022-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://stone-sail.github.io/categories/memory/</loc>
-    <lastmod>2022-06-12</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
