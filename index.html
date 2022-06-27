@@ -304,7 +304,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-06-27 22:00:00 / Modified: 16:46:51" itemprop="dateCreated datePublished" datetime="2022-06-27T22:00:00+08:00">2022-06-27</time>
+              <time title="Created: 2022-06-27 22:00:00 / Modified: 16:47:30" itemprop="dateCreated datePublished" datetime="2022-06-27T22:00:00+08:00">2022-06-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>989</span>
+              <span>993</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -355,13 +355,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
+          <h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
 <p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
 <p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
 <blockquote>
 <p>输入：l1 &#x3D; [2,4,3], l2 &#x3D; [5,6,4]<br>输出：[7,0,8]<br>解释：342 + 465 &#x3D; 807.</p>
 </blockquote>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>由于链表是逆序，因此只需要将两个输入链表的数字逐一相加，并加上进位即可</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>由于链表是逆序，因此只需要将两个输入链表的数字逐一相加，并加上进位即可</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">      ListNode* t1 = l1;</span><br><span class="line">      ListNode* t2 = l2;</span><br><span class="line">      ListNode* head = <span class="keyword">new</span> <span class="built_in">ListNode</span>();</span><br><span class="line">      ListNode* current = head;</span><br><span class="line">       </span><br><span class="line">      <span class="type">int</span> carry = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(t1 != <span class="literal">nullptr</span> || t2 != <span class="literal">nullptr</span> || carry &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> sum = carry;</span><br><span class="line">        <span class="keyword">if</span> (t1 != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">          sum += t1-&gt;val;</span><br><span class="line">          t1 = t1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (t2 != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">          sum += t2-&gt;val;</span><br><span class="line">          t2 = t2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        current-&gt;next = <span class="keyword">new</span> <span class="built_in">ListNode</span>(sum % <span class="number">10</span>);;</span><br><span class="line">        current = current-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -404,10 +404,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-06-25 20:00:00 / Modified: 21:33:51" itemprop="dateCreated datePublished" datetime="2022-06-25T20:00:00+08:00">2022-06-25</time>
+              <time title="Created: 2022-06-25 20:00:00" itemprop="dateCreated datePublished" datetime="2022-06-25T20:00:00+08:00">2022-06-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 21:11:49" itemprop="dateModified" datetime="2022-06-27T21:11:49+08:00">2022-06-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -467,7 +473,7 @@
 <h2 id="4-Compare-C-Build"><a href="#4-Compare-C-Build" class="headerlink" title="4.Compare C++ Build"></a>4.<a target="_blank" rel="noopener" href="https://build-bench.com/">Compare C++ Build</a></h2><p><strong>简介：</strong> 对代码编译进行时间、CPU、内存等开销的测量。它和Quick C++ Benchmark是同一个人写的。<br><strong>url：</strong> <a target="_blank" rel="noopener" href="https://build-bench.com/">Compare C++ Build</a><br><strong>github：</strong><a target="_blank" rel="noopener" href="https://github.com/FredTingaud">Compare C++ Build github</a></p>
 <p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212900570.png" alt="picture 7">  </p>
 <h2 id="5-C-Insight"><a href="#5-C-Insight" class="headerlink" title="5.C++ Insight"></a>5.<a target="_blank" rel="noopener" href="https://cppinsights.io/">C++ Insight</a></h2><p><strong>简介：</strong> 一个允许我们查看C++编译器如何将C++代码转换的中间文件，尤其是模版的展开的情况，非常insightful。<br><strong>url：</strong> <a target="_blank" rel="noopener" href="https://cppinsights.io/">C++ Insight</a><br><strong>github：</strong><a target="_blank" rel="noopener" href="https://github.com/andreasfertig/cppinsights">C++ Insight github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-211654271.png" alt="picture 5">  </p>
-<h2 id="6-C-Jupyter-Notebook"><a href="#6-C-Jupyter-Notebook" class="headerlink" title="6.C++ Jupyter Notebook"></a>6.<a target="_blank" rel="noopener" href="https://hub-binder.mybinder.ovh/user/jupyter-xeus-xeus-cling-dakndxdb/notebooks/notebooks/xcpp.ipynb">C++ Jupyter Notebook</a></h2><p><strong>简介：</strong> 这个工具是Jupyter和C++解释器Cling的一个结合体，它允许我们快速测试代码和可视化数据。<br><strong>url：</strong> <a target="_blank" rel="noopener" href="https://hub-binder.mybinder.ovh/user/jupyter-xeus-xeus-cling-dakndxdb/notebooks/notebooks/xcpp.ipynb">C++ Jupyter Notebook</a><br><strong>github：</strong><a target="_blank" rel="noopener" href="https://github.com/jupyter-xeus/xeus-cling">C++ Jupyter Notebook github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212505837.png" alt="picture 6">  </p>
+<h2 id="6-C-Jupyter-Notebook"><a href="#6-C-Jupyter-Notebook" class="headerlink" title="6.C++ Jupyter Notebook"></a>6.<a target="_blank" rel="noopener" href="https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb">C++ Jupyter Notebook</a></h2><p><strong>简介：</strong> 这个工具是Jupyter和C++解释器Cling的一个结合体，它允许我们快速测试代码和可视化数据。<br><strong>url：</strong> <a target="_blank" rel="noopener" href="https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb">C++ Jupyter Notebook</a><br><strong>github：</strong><a target="_blank" rel="noopener" href="https://github.com/jupyter-xeus/xeus-cling">C++ Jupyter Notebook github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212505837.png" alt="picture 6">  </p>
 
       
     </div>
