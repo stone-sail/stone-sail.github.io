@@ -139,39 +139,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode framework</title>
-    <url>/2022/06/27/leetcode/leetcode-framework/</url>
-    <content><![CDATA[<h1 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h1><h2 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1. 二叉树"></a>1. 二叉树</h2><p>刷题一般现从二叉树开始刷，因为二叉树容易培养框架思维，而且大部分的算法技巧本质上都是二叉树的遍历问题：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">traverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 前序遍历代码位置</span></span><br><span class="line">  <span class="built_in">traverse</span>(root-&gt;left);</span><br><span class="line">  <span class="comment">// 中序遍历代码位置</span></span><br><span class="line">  <span class="built_in">traverse</span>(root-&gt;right);</span><br><span class="line">  <span class="comment">// 后续遍历代码位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上几行代码，几乎所有的二叉树题目都是一套这个框架就出来了。</p>
-<h3 id="1-1-前序遍历"><a href="#1-1-前序遍历" class="headerlink" title="1.1 前序遍历"></a>1.1 前序遍历</h3><ul>
-<li><a href="/2022/07/26/leetcode/leetcode_105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/" title="105 从前序与中序遍历序列构造二叉树">105 从前序与中序遍历序列构造二叉树</a></li>
-</ul>
-<h3 id="1-2-中序遍历"><a href="#1-2-中序遍历" class="headerlink" title="1.2 中序遍历"></a>1.2 中序遍历</h3><ul>
-<li><a href="/2022/07/26/leetcode/leetcode_99-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" title="99. 恢复二叉搜索树">99. 恢复二叉搜索树</a></li>
-</ul>
-<h3 id="1-3-后序遍历"><a href="#1-3-后序遍历" class="headerlink" title="1.3 后序遍历"></a>1.3 后序遍历</h3><ul>
-<li><a href="/2022/07/06/leetcode/leetcode_124-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/" title="124. 二叉树中的最大路径和">124. 二叉树中的最大路径和</a></li>
-</ul>
-<h2 id="2-linked-list"><a href="#2-linked-list" class="headerlink" title="2. linked list"></a>2. linked list</h2><ul>
-<li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a>
-</li>
-<li><a href="/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" title="19. 删除链表的倒数第N个节点">19. 删除链表的倒数第N个节点</a>
-</li>
-<li><a href="/2022/07/03/leetcode/leetcode_23-%E5%90%88%E5%B9%B6K%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="23. 合并K个升序链表">23. 合并K个升序链表</a>
-</li>
-<li><a href="/2022/07/04/leetcode/leetcode_25-K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" title="25. K 个一组翻转链表">25. K 个一组翻转链表</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>algorithm</tag>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>105 从前序与中序遍历序列构造二叉树</title>
     <url>/2022/07/26/leetcode/leetcode_105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。</p>
@@ -194,24 +161,45 @@
       </tags>
   </entry>
   <entry>
-    <title>19. 删除链表的倒数第N个节点</title>
-    <url>/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/</url>
-    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。</p>
-<blockquote>
-<p>输入：head &#x3D; [1,2,3,4,5], n &#x3D; 2<br>输出：[1,2,3,5]</p>
-</blockquote>
-<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>采用双指针计数的方式找到目标节点的<strong>前一个</strong>节点，设置 <strong>node-&gt;next &#x3D; node-&gt;next-&gt;next</strong> 删除目标节点</p>
-<span id="more"></span>
+    <title>leetcode framework</title>
+    <url>/2022/06/27/leetcode/leetcode-framework/</url>
+    <content><![CDATA[<h1 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h1><h2 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1. 二叉树"></a>1. 二叉树</h2><p>刷题一般现从二叉树开始刷，因为二叉树容易培养框架思维，而且大部分的算法技巧本质上都是二叉树的遍历问题：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">traverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 前序遍历代码位置</span></span><br><span class="line">  <span class="built_in">traverse</span>(root-&gt;left);</span><br><span class="line">  <span class="comment">// 中序遍历代码位置</span></span><br><span class="line">  <span class="built_in">traverse</span>(root-&gt;right);</span><br><span class="line">  <span class="comment">// 后续遍历代码位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上几行代码，几乎所有的二叉树题目都是一套这个框架就出来了。</p>
+<h3 id="1-1-前序遍历"><a href="#1-1-前序遍历" class="headerlink" title="1.1 前序遍历"></a>1.1 前序遍历</h3><ul>
+<li><a href="/2022/07/26/leetcode/leetcode_105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/" title="105 从前序与中序遍历序列构造二叉树">105 从前序与中序遍历序列构造二叉树</a></li>
+</ul>
+<h3 id="1-2-中序遍历"><a href="#1-2-中序遍历" class="headerlink" title="1.2 中序遍历"></a>1.2 中序遍历</h3><ul>
+<li><a href="/2022/07/26/leetcode/leetcode_99-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" title="99. 恢复二叉搜索树">99. 恢复二叉搜索树</a></li>
+</ul>
+<h3 id="1-3-后序遍历"><a href="#1-3-后序遍历" class="headerlink" title="1.3 后序遍历"></a>1.3 后序遍历</h3><ul>
+<li><a href="/2022/07/06/leetcode/leetcode_124-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/" title="124. 二叉树中的最大路径和">124. 二叉树中的最大路径和</a></li>
+</ul>
+<h2 id="2-linked-list"><a href="#2-linked-list" class="headerlink" title="2. linked list"></a>2. linked list</h2><p>链表的六个技巧</p>
+<ul>
+<li><a href="/2022/07/11/leetcode/leetcode_21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="21. 合并两个有序链表">21. 合并两个有序链表</a>
+</li>
+<li><a href="/2022/07/03/leetcode/leetcode_23-%E5%90%88%E5%B9%B6K%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="23. 合并K个升序链表">23. 合并K个升序链表</a>
+</li>
+<li><a href="/2022/07/11/leetcode/leetcode_141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" title="141. 环形链表">141. 环形链表</a>
+</li>
+<li><a href="/2022/07/11/leetcode/leetcode_142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/" title="142. 环形链表2">142. 环形链表2</a>
+</li>
+<li><a href="/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" title="19. 删除链表的倒数第N个节点">19. 删除链表的倒数第N个节点</a>
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) <span class="keyword">return</span> head;</span><br><span class="line">      ListNode* first, *second;</span><br><span class="line">      first = second = head;</span><br><span class="line">      <span class="keyword">while</span> ((second != <span class="literal">nullptr</span>) &amp;&amp; (n-- &gt; <span class="number">0</span>)) &#123;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// n &gt; 队列长度</span></span><br><span class="line">      <span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// n == 队列长度 则删除头结点</span></span><br><span class="line">      <span class="keyword">if</span> (second == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// n &lt; 队列长度，获取倒数n+1个节点，删除倒数n个点解</span></span><br><span class="line">      <span class="keyword">while</span> (second-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        first = first-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      first-&gt;next = first-&gt;next-&gt;next;</span><br><span class="line">      <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// @lc code=end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+</li>
+<li><a href="/2022/07/04/leetcode/leetcode_25-K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" title="25. K 个一组翻转链表">25. K 个一组翻转链表</a></li>
+</ul>
+<h2 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a>3. 其他</h2><ul>
+<li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
+</ul>
+]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>hide</tag>
         <tag>algorithm</tag>
         <tag>leetcode</tag>
-        <tag>linked-list</tag>
       </tags>
   </entry>
   <entry>
@@ -243,6 +231,70 @@
       </tags>
   </entry>
   <entry>
+    <title>141. 环形链表</title>
+    <url>/2022/07/11/leetcode/leetcode_141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个链表的头节点 head ，判断链表中是否有环。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环 ，则返回 true 。 否则，返回 false 。</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>主要使用快慢指针的思路，快指针每次移动2次，慢指针每次移动一次，当链表中存在环时，快慢指针会指向同一个节点</p>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      ListNode* first = head;</span><br><span class="line">      ListNode* second = first;</span><br><span class="line">      <span class="keyword">while</span> (first != <span class="literal">nullptr</span> &amp;&amp; first-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        first = first-&gt;next-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (first != <span class="literal">nullptr</span> &amp;&amp; (first == second)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>linked-list</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>142. 环形链表2</title>
+    <url>/2022/07/11/leetcode/leetcode_142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>主要使用快慢指针的思路，根据- <a href="#">Post not found: leetcode/leetcode_141-循环链表</a> 的思路，求两次交点：</p>
+<ol>
+<li>快指针每次移动2个节点，慢指针移动一个节点，看是否有交点，没有交点则不是循环链表</li>
+<li>快指针指向头节点，快慢指针每次移动一次求交点，结果为链表开始入环的第一个节点</li>
+</ol>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">      <span class="keyword">if</span> (head-&gt;next == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">      ListNode *first, *second;</span><br><span class="line">      first = second = head;</span><br><span class="line">      <span class="keyword">while</span> (first != <span class="literal">nullptr</span> &amp;&amp; first-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        first = first-&gt;next-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (first == second) &#123;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (first == <span class="literal">nullptr</span> || first-&gt;next == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      second = head;</span><br><span class="line">      <span class="keyword">while</span> (first != second) &#123;</span><br><span class="line">        first = first-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>linked-list</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>19. 删除链表的倒数第N个节点</title>
+    <url>/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。</p>
+<blockquote>
+<p>输入：head &#x3D; [1,2,3,4,5], n &#x3D; 2<br>输出：[1,2,3,5]</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>采用双指针计数的方式找到目标节点的<strong>前一个</strong>节点，设置 <strong>node-&gt;next &#x3D; node-&gt;next-&gt;next</strong> 删除目标节点</p>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) <span class="keyword">return</span> head;</span><br><span class="line">      ListNode* first, *second;</span><br><span class="line">      first = second = head;</span><br><span class="line">      <span class="keyword">while</span> ((second != <span class="literal">nullptr</span>) &amp;&amp; (n-- &gt; <span class="number">0</span>)) &#123;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// n &gt; 队列长度</span></span><br><span class="line">      <span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// n == 队列长度 则删除头结点</span></span><br><span class="line">      <span class="keyword">if</span> (second == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// n &lt; 队列长度，获取倒数n+1个节点，删除倒数n个点解</span></span><br><span class="line">      <span class="keyword">while</span> (second-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        first = first-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      first-&gt;next = first-&gt;next-&gt;next;</span><br><span class="line">      <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// @lc code=end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>linked-list</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2. 两数相加</title>
     <url>/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
     <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
@@ -255,6 +307,31 @@
 <span id="more"></span>
 
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">      ListNode* t1 = l1;</span><br><span class="line">      ListNode* t2 = l2;</span><br><span class="line">      ListNode* head = <span class="keyword">new</span> <span class="built_in">ListNode</span>();</span><br><span class="line">      ListNode* current = head;</span><br><span class="line">       </span><br><span class="line">      <span class="type">int</span> carry = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(t1 != <span class="literal">nullptr</span> || t2 != <span class="literal">nullptr</span> || carry &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> sum = carry;</span><br><span class="line">        <span class="keyword">if</span> (t1 != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">          sum += t1-&gt;val;</span><br><span class="line">          t1 = t1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (t2 != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">          sum += t2-&gt;val;</span><br><span class="line">          t2 = t2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        current-&gt;next = <span class="keyword">new</span> <span class="built_in">ListNode</span>(sum % <span class="number">10</span>);;</span><br><span class="line">        current = current-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>linked-list</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>21. 合并两个有序链表</title>
+    <url>/2022/07/11/leetcode/leetcode_21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<blockquote>
+<p>输入：l1 &#x3D; [], l2 &#x3D; []<br>输出：[]</p>
+</blockquote>
+<blockquote>
+<p>输入：l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]<br>输出：[1,1,2,3,4,4]</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>把两个有序链表通过比较大小依次合并到新链表,注意不要忘记把剩余的部分也合并进去。</p>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* list1, ListNode* list2)</span> </span>&#123;</span><br><span class="line">      ListNode* head = <span class="keyword">new</span> <span class="built_in">ListNode</span>();</span><br><span class="line">      ListNode* node = head;</span><br><span class="line">      <span class="keyword">while</span> (list1 != <span class="literal">nullptr</span> &amp;&amp; list2 != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode* cur = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span> (list1-&gt;val &lt; list2-&gt;val) &#123;</span><br><span class="line">          cur = list1;</span><br><span class="line">          list1 = list1-&gt;next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          cur = list2;</span><br><span class="line">          list2 = list2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        cur-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        node-&gt;next = cur;</span><br><span class="line">        node = cur;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (list1) &#123;</span><br><span class="line">        node-&gt;next = list1;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        node-&gt;next = list2;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
