@@ -164,14 +164,21 @@
 <li><a href="/2022/07/11/leetcode/leetcode_142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/" title="142. 环形链表2">142. 环形链表2</a>
 </li>
 <li><a href="/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/" title="160. 相交链表">160. 相交链表</a>
-
 </li>
-<li><a href="/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" title="19. 删除链表的倒数第N个节点">19. 删除链表的倒数第N个节点</a>
-
-</li>
+<li><a href="/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" title="19. 删除链表的倒数第N个节点">19. 删除链表的倒数第N个节点</a></li>
+</ul>
+<hr>
+<ul>
 <li><a href="/2022/07/04/leetcode/leetcode_25-K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" title="25. K 个一组翻转链表">25. K 个一组翻转链表</a></li>
 </ul>
-<h2 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a>3. 其他</h2><ul>
+<h2 id="3-前缀和"><a href="#3-前缀和" class="headerlink" title="3. 前缀和"></a>3. 前缀和</h2><p>前缀和的定义：<br>我们求数列的和时，Sn &#x3D; a1+a2+a3+…an; 此时Sn就是数列的前 n 项和。例 S5 &#x3D; a1 + a2 + a3 + a4 + a5; S2 &#x3D; a1 + a2。所以我们完全可以通过 S5-S2 得到 a3+a4+a5 的值，这个过程就和我们做题用到的前缀和思想类似。我们的前缀和数组里保存的就是前 n 项的和。</p>
+<p>前缀和是以求和的方式灵活地面对区间询问,如以下：</p>
+<ul>
+<li><a href="/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/" title="303. 区域和检索">303. 区域和检索</a>
+</li>
+<li><a href="/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/" title="304. 二维区域和检索">304. 二维区域和检索</a></li>
+</ul>
+<h2 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h2><ul>
 <li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
 </ul>
 ]]></content>
@@ -364,6 +371,33 @@
       </tags>
   </entry>
   <entry>
+    <title>25. K 个一组翻转链表</title>
+    <url>/2022/07/04/leetcode/leetcode_25-K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。</p>
+<p>k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</p>
+<blockquote>
+<p>输入：head &#x3D; [1,2,3,4,5], k &#x3D; 2<br>输出：[2,1,4,3,5]</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>借鉴反转链表的思路，每k个链表进行反转，只是要注意：</p>
+<ol>
+<li>当k为1时，不需要进行反转</li>
+<li>当链表节点不足k个时，不需要反转，为此我们采用的思路是检查最后一组反转的节点数，如果小于k个，则再次反转一次，即：反转回原先的位置</li>
+</ol>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseKGroup</span><span class="params">(ListNode* head, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span> || k == <span class="number">1</span>) <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">      head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>, head);</span><br><span class="line">      ListNode* node = head;</span><br><span class="line">      ListNode* cur = head-&gt;next;</span><br><span class="line">      <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">      ListNode *label = <span class="literal">nullptr</span>;</span><br><span class="line">      <span class="keyword">while</span> ((count++ &lt; k) &amp;&amp; (cur != <span class="literal">nullptr</span>)) &#123; </span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">1</span>) &#123;</span><br><span class="line">          label = cur;</span><br><span class="line">          cur = cur-&gt;next;</span><br><span class="line">          label-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span>* tmpCur = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = node-&gt;next;</span><br><span class="line">        node-&gt;next = cur;</span><br><span class="line">        cur = tmpCur;</span><br><span class="line">        label-&gt;next = cur;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ((cur != <span class="literal">nullptr</span>) &amp;&amp; (count == k)) &#123;</span><br><span class="line">          count = <span class="number">0</span>;</span><br><span class="line">          node = label;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (count &lt;= k) &#123;</span><br><span class="line">        cur = node-&gt;next-&gt;next;</span><br><span class="line">        node-&gt;next-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">          <span class="keyword">auto</span>* tmp = cur-&gt;next;</span><br><span class="line">          cur-&gt;next = node-&gt;next;</span><br><span class="line">          node-&gt;next = cur;</span><br><span class="line">          cur = tmp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>linked-list</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>23. 合并K个升序链表</title>
     <url>/2022/07/03/leetcode/leetcode_23-%E5%90%88%E5%B9%B6K%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个链表数组，每个链表都已经按升序排列。</p>
@@ -386,22 +420,60 @@
       </tags>
   </entry>
   <entry>
-    <title>25. K 个一组翻转链表</title>
-    <url>/2022/07/04/leetcode/leetcode_25-K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。</p>
-<p>k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
-<p>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</p>
-<blockquote>
-<p>输入：head &#x3D; [1,2,3,4,5], k &#x3D; 2<br>输出：[2,1,4,3,5]</p>
-</blockquote>
-<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>借鉴反转链表的思路，每k个链表进行反转，只是要注意：</p>
-<ol>
-<li>当k为1时，不需要进行反转</li>
-<li>当链表节点不足k个时，不需要反转，为此我们采用的思路是检查最后一组反转的节点数，如果小于k个，则再次反转一次，即：反转回原先的位置</li>
-</ol>
+    <title>303. 区域和检索</title>
+    <url>/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个整数数组  nums，处理以下类型的多个查询:</p>
+<p>计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和 ，其中 left &lt;&#x3D; right<br>实现 NumArray 类：</p>
+<p>NumArray(int[] nums) 使用数组 nums 初始化对象<br>int sumRange(int i, int j) 返回数组 nums 中索引 left 和 right 之间的元素的 总和 ，包含 left 和 right 两点（也就是 nums[left] + nums[left + 1] + … + nums[right] )</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>使用前缀和的思路，实现索引分段检索</p>
 <span id="more"></span>
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseKGroup</span><span class="params">(ListNode* head, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span> || k == <span class="number">1</span>) <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">      head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>, head);</span><br><span class="line">      ListNode* node = head;</span><br><span class="line">      ListNode* cur = head-&gt;next;</span><br><span class="line">      <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">      ListNode *label = <span class="literal">nullptr</span>;</span><br><span class="line">      <span class="keyword">while</span> ((count++ &lt; k) &amp;&amp; (cur != <span class="literal">nullptr</span>)) &#123; </span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">1</span>) &#123;</span><br><span class="line">          label = cur;</span><br><span class="line">          cur = cur-&gt;next;</span><br><span class="line">          label-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span>* tmpCur = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = node-&gt;next;</span><br><span class="line">        node-&gt;next = cur;</span><br><span class="line">        cur = tmpCur;</span><br><span class="line">        label-&gt;next = cur;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ((cur != <span class="literal">nullptr</span>) &amp;&amp; (count == k)) &#123;</span><br><span class="line">          count = <span class="number">0</span>;</span><br><span class="line">          node = label;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (count &lt;= k) &#123;</span><br><span class="line">        cur = node-&gt;next-&gt;next;</span><br><span class="line">        node-&gt;next-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">          <span class="keyword">auto</span>* tmp = cur-&gt;next;</span><br><span class="line">          cur-&gt;next = node-&gt;next;</span><br><span class="line">          node-&gt;next = cur;</span><br><span class="line">          cur = tmp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode.cn id=303 lang=cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [303] 区域和检索 - 数组不可变</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NumArray</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">NumArray</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">      sum_.<span class="built_in">reserve</span>(nums.<span class="built_in">size</span>() + <span class="number">1</span>);</span><br><span class="line">      sum_.<span class="built_in">shrink_to_fit</span>();</span><br><span class="line">      <span class="type">int</span> nums_sum = <span class="number">0</span>;</span><br><span class="line">      sum_.<span class="built_in">push_back</span>(nums_sum);</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">auto</span> val : nums) &#123;</span><br><span class="line">        nums_sum += val;</span><br><span class="line">        sum_.<span class="built_in">push_back</span>(nums_sum);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumRange</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> sum_[right+<span class="number">1</span>] - sum_[left];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; sum_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>304. 二维区域和检索</title>
+    <url>/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个二维矩阵 matrix，以下类型的多个请求：</p>
+<p>计算其子矩形范围内元素的总和，该子矩阵的 左上角 为 (row1, col1) ，右下角 为 (row2, col2) 。<br>实现 NumMatrix 类：</p>
+<p>NumMatrix(int[][] matrix) 给定整数矩阵 matrix 进行初始化<br>int sumRegion(int row1, int col1, int row2, int col2) 返回 左上角 (row1, col1) 、右下角 (row2, col2) 所描述的子矩阵的元素 总和 。</p>
+<p><img src="/../../images/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/IMG_20220717-123926880.png" alt="picture 2">  </p>
+<blockquote>
+<p>输入:<br>[“NumMatrix”,”sumRegion”,”sumRegion”,”sumRegion”]<br>[[[[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]],[2,1,4,3],[1,1,2,2],[1,2,2,4]]<br>输出:<br>[null, 8, 11, 12]<br>解释:<br>NumMatrix numMatrix &#x3D; new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]);<br>numMatrix.sumRegion(2, 1, 4, 3); &#x2F;&#x2F; return 8 (红色矩形框的元素总和)<br>numMatrix.sumRegion(1, 1, 2, 2); &#x2F;&#x2F; return 11 (绿色矩形框的元素总和)<br>numMatrix.sumRegion(1, 2, 2, 4); &#x2F;&#x2F; return 12 (蓝色矩形框的元素总和)</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumMatrix</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">NumMatrix</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">      <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="type">int</span> rows = matrix.<span class="built_in">size</span>();</span><br><span class="line">      <span class="type">int</span> cols = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">      nums_ = vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;(rows+<span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols+<span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">1</span>; i &lt; rows + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">size_t</span> j = <span class="number">1</span>; j &lt; cols + <span class="number">1</span>; ++j) &#123;</span><br><span class="line">          nums_[i][j] = nums_[i<span class="number">-1</span>][j] + nums_[i][j<span class="number">-1</span>] - nums_[i<span class="number">-1</span>][j<span class="number">-1</span>] + matrix[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumRegion</span><span class="params">(<span class="type">int</span> row1, <span class="type">int</span> col1, <span class="type">int</span> row2, <span class="type">int</span> col2)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> nums_[row2+<span class="number">1</span>][col2+<span class="number">1</span>] - nums_[row2+<span class="number">1</span>][col1] - nums_[row1][col2+<span class="number">1</span>] + nums_[row1][col1];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; nums_;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>876. 链表的中间节点</title>
+    <url>/2022/07/11/leetcode/leetcode_876-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个头结点为 head 的非空单链表，返回链表的中间结点。</p>
+<p>如果有两个中间结点，则返回第二个中间结点。</p>
+<blockquote>
+<p>输入：[1,2,3,4,5]<br>输出：此列表中的结点 3 (序列化形式：[3,4,5])<br>返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。<br>注意，我们返回了一个 ListNode 类型的对象 ans，这样：<br>ans.val &#x3D; 3, ans.next.val &#x3D; 4, ans.next.next.val &#x3D; 5, 以及 ans.next.next.next &#x3D; NULL.</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>主要使用快慢指针的思路， 快指针每次移动2个节点，慢指针移动一个节点，当快指针到达最后则慢指针指向中间节点</p>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">middleNode</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">      ListNode *fast, *slow;</span><br><span class="line">      fast = slow = head;</span><br><span class="line">      <span class="keyword">while</span> (fast &amp;&amp; fast-&gt;next) &#123;</span><br><span class="line">        fast = fast-&gt;next-&gt;next;</span><br><span class="line">        slow = slow-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>

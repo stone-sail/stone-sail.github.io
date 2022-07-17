@@ -20,23 +20,23 @@
     var CONFIG = {"hostname":"stone-sail.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1. Description给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。 2. Solution把A和B两个链表合并起来组成c1 &#x3D; A-&gt;B, c2 &#x3D; B-&gt;A，则c1和c2的长度相同而且相交部分的长度相同，因此遍历C1和C2，首先找到的公共节点就是两个链表相交的起始">
+  <meta name="description" content="1. Description给定一个整数数组  nums，处理以下类型的多个查询: 计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和 ，其中 left &lt;&#x3D; right实现 NumArray 类： NumArray(int[] nums) 使用数组 nums 初始化对象int sumRange(int i, int j) 返回数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="160. 相交链表">
-<meta property="og:url" content="http://stone-sail.github.io/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/index.html">
+<meta property="og:title" content="303. 区域和检索">
+<meta property="og:url" content="http://stone-sail.github.io/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Stone-Sail&#39;s Blog">
-<meta property="og:description" content="1. Description给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。 2. Solution把A和B两个链表合并起来组成c1 &#x3D; A-&gt;B, c2 &#x3D; B-&gt;A，则c1和c2的长度相同而且相交部分的长度相同，因此遍历C1和C2，首先找到的公共节点就是两个链表相交的起始">
+<meta property="og:description" content="1. Description给定一个整数数组  nums，处理以下类型的多个查询: 计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和 ，其中 left &lt;&#x3D; right实现 NumArray 类： NumArray(int[] nums) 使用数组 nums 初始化对象int sumRange(int i, int j) 返回数组">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-07-11T14:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-11T18:04:18.685Z">
+<meta property="article:published_time" content="2022-07-12T14:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-16T14:43:11.650Z">
 <meta property="article:author" content="Stone-Sail">
 <meta property="article:tag" content="hide">
 <meta property="article:tag" content="algorithm">
 <meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="linked-list">
+<meta property="article:tag" content="前缀和">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://stone-sail.github.io/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/">
+<link rel="canonical" href="http://stone-sail.github.io/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>160. 相交链表 | Stone-Sail's Blog</title>
+  <title>303. 区域和检索 | Stone-Sail's Blog</title>
   
 
 
@@ -192,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpeg">
@@ -205,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          160. 相交链表
+          303. 区域和检索
         </h1>
 
         <div class="post-meta">
@@ -215,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-07-11 22:00:00" itemprop="dateCreated datePublished" datetime="2022-07-11T22:00:00+08:00">2022-07-11</time>
+              <time title="Created: 2022-07-12 22:00:00" itemprop="dateCreated datePublished" datetime="2022-07-12T22:00:00+08:00">2022-07-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-12 02:04:18" itemprop="dateModified" datetime="2022-07-12T02:04:18+08:00">2022-07-12</time>
+                <time title="Modified: 2022-07-16 22:43:11" itemprop="dateModified" datetime="2022-07-16T22:43:11+08:00">2022-07-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,8 +250,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/11/leetcode/leetcode_160-相交链表/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/12/leetcode/leetcode_303-区域和检索/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -261,7 +261,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>653</span>
+              <span>724</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -280,11 +280,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。</p>
-<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>把A和B两个链表合并起来组成c1 &#x3D; A-&gt;B, c2 &#x3D; B-&gt;A，则c1和c2的长度相同而且相交部分的长度相同，因此遍历C1和C2，首先找到的公共节点就是两个链表相交的起始节点</p>
+        <h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个整数数组  nums，处理以下类型的多个查询:</p>
+<p>计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和 ，其中 left &lt;&#x3D; right<br>实现 NumArray 类：</p>
+<p>NumArray(int[] nums) 使用数组 nums 初始化对象<br>int sumRange(int i, int j) 返回数组 nums 中索引 left 和 right 之间的元素的 总和 ，包含 left 和 right 两点（也就是 nums[left] + nums[left + 1] + … + nums[right] )</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>使用前缀和的思路，实现索引分段检索</p>
 <span id="more"></span>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (headB == <span class="literal">nullptr</span> || headA == <span class="literal">nullptr</span> )  &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      ListNode* pa = headA, *pb = headB;</span><br><span class="line">      <span class="keyword">while</span>(pa != pb) &#123;</span><br><span class="line">        pa = (pa == <span class="literal">nullptr</span>) ? headB : pa-&gt;next;</span><br><span class="line">        pb = (pb == <span class="literal">nullptr</span>) ? headA : pb-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> pa;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode.cn id=303 lang=cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [303] 区域和检索 - 数组不可变</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NumArray</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">NumArray</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">      sum_.<span class="built_in">reserve</span>(nums.<span class="built_in">size</span>() + <span class="number">1</span>);</span><br><span class="line">      sum_.<span class="built_in">shrink_to_fit</span>();</span><br><span class="line">      <span class="type">int</span> nums_sum = <span class="number">0</span>;</span><br><span class="line">      sum_.<span class="built_in">push_back</span>(nums_sum);</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">auto</span> val : nums) &#123;</span><br><span class="line">        nums_sum += val;</span><br><span class="line">        sum_.<span class="built_in">push_back</span>(nums_sum);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumRange</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> sum_[right+<span class="number">1</span>] - sum_[left];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; sum_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -299,7 +301,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://stone-sail.github.io/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/" title="160. 相交链表">http://stone-sail.github.io/2022/07/11/leetcode/leetcode_160-相交链表/</a>
+    <a href="http://stone-sail.github.io/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/" title="303. 区域和检索">http://stone-sail.github.io/2022/07/12/leetcode/leetcode_303-区域和检索/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -313,7 +315,7 @@
               <a href="/tags/hide/" rel="tag"># hide</a>
               <a href="/tags/algorithm/" rel="tag"># algorithm</a>
               <a href="/tags/leetcode/" rel="tag"># leetcode</a>
-              <a href="/tags/linked-list/" rel="tag"># linked-list</a>
+              <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag"># 前缀和</a>
           </div>
 
         
@@ -322,12 +324,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/07/11/leetcode/leetcode_21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" rel="prev" title="21. 合并两个有序链表">
-      <i class="fa fa-chevron-left"></i> 21. 合并两个有序链表
+    <a href="/2022/07/11/leetcode/leetcode_141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" rel="prev" title="141. 环形链表">
+      <i class="fa fa-chevron-left"></i> 141. 环形链表
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/07/11/leetcode/leetcode_142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/" rel="next" title="142. 环形链表2">
-      142. 环形链表2 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/07/26/leetcode/leetcode_99-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" rel="next" title="99. 恢复二叉搜索树">
+      99. 恢复二叉搜索树 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -570,9 +572,9 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://stone-sail.github.io/2022/07/11/leetcode/leetcode_160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/";
-    this.page.identifier = "2022/07/11/leetcode/leetcode_160-相交链表/";
-    this.page.title = "160. 相交链表";
+    this.page.url = "http://stone-sail.github.io/2022/07/12/leetcode/leetcode_303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/";
+    this.page.identifier = "2022/07/12/leetcode/leetcode_303-区域和检索/";
+    this.page.title = "303. 区域和检索";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
