@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>c++有用的工具网站</title>
+    <url>/2022/06/25/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>分享几个好用的C++在线工具，能帮助我们深入理解C++极其内部原理</p>
+<h2 id="1-Compiler-Explorer"><a href="#1-Compiler-Explorer" class="headerlink" title="1.Compiler Explorer"></a>1.<a href="https://godbolt.org/">Compiler Explorer</a></h2><p><strong>简介：</strong> 这是一个在线汇编代码分析网站，它将C++代码编译成汇编语言，然后用一种用户十分友好的方式显示出来，将C++代码和汇编代码用相同颜色对应起来，当我们把鼠标放到汇编指令时会有对应的指令介绍。它支持用不同版本的编译器和优化级别。它还支持用三方库，包括boost、eigen等。目前已经支持C, C++, C#, F#, Rust, Go, D, Haskell, Swift, Pascal, ispc, Python, Java等超过30多种语言<br><strong>url：</strong> <a href="https://godbolt.org/">godbolt</a><br><strong>github：</strong><a href="https://github.com/compiler-explorer/compiler-explorer">Compiler Explorer github</a></p>
+<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-205729301.png" alt="picture 2">  </p>
+<h2 id="2-wandbox"><a href="#2-wandbox" class="headerlink" title="2.wandbox"></a>2.<a href="https://wandbox.org/">wandbox</a></h2><p><strong>简介：</strong> 一个支持多语言的在线编译的网站，我们可以快速地在里面写实验代码。它支持的语言包括C++、C、rust、python、java等等。它支持多个编译器版本，我们可以用它来测试C++20的新功能<br><strong>url：</strong> <a href="https://wandbox.org/">wandbox</a><br><strong>github：</strong><a href="https://github.com/melpon/wandbox">wandbox github</a></p>
+<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-210905070.png" alt="picture 3">  </p>
+<h2 id="3-Quick-C-Benchmark"><a href="#3-Quick-C-Benchmark" class="headerlink" title="3.Quick C++ Benchmark"></a>3.<a href="https://quick-bench.com/">Quick C++ Benchmark</a></h2><p><strong>简介：</strong> C++代码benchmark的在线工具，我们可以通过它来快速benchmark小的代码片段<br><strong>url：</strong> <a href="https://quick-bench.com/">Quick C++ Benchmark</a><br><strong>github：</strong><a href="https://github.com/FredTingaud">Quick C++ Benchmark github</a></p>
+<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-211122151.png" alt="picture 4">  </p>
+<h2 id="4-Compare-C-Build"><a href="#4-Compare-C-Build" class="headerlink" title="4.Compare C++ Build"></a>4.<a href="https://build-bench.com/">Compare C++ Build</a></h2><p><strong>简介：</strong> 对代码编译进行时间、CPU、内存等开销的测量。它和Quick C++ Benchmark是同一个人写的。<br><strong>url：</strong> <a href="https://build-bench.com/">Compare C++ Build</a><br><strong>github：</strong><a href="https://github.com/FredTingaud">Compare C++ Build github</a></p>
+<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212900570.png" alt="picture 7">  </p>
+<h2 id="5-C-Insight"><a href="#5-C-Insight" class="headerlink" title="5.C++ Insight"></a>5.<a href="https://cppinsights.io/">C++ Insight</a></h2><p><strong>简介：</strong> 一个允许我们查看C++编译器如何将C++代码转换的中间文件，尤其是模版的展开的情况，非常insightful。<br><strong>url：</strong> <a href="https://cppinsights.io/">C++ Insight</a><br><strong>github：</strong><a href="https://github.com/andreasfertig/cppinsights">C++ Insight github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-211654271.png" alt="picture 5">  </p>
+<h2 id="6-C-Jupyter-Notebook"><a href="#6-C-Jupyter-Notebook" class="headerlink" title="6.C++ Jupyter Notebook"></a>6.<a href="https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb">C++ Jupyter Notebook</a></h2><p><strong>简介：</strong> 这个工具是Jupyter和C++解释器Cling的一个结合体，它允许我们快速测试代码和可视化数据。<br><strong>url：</strong> <a href="https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb">C++ Jupyter Notebook</a><br><strong>github：</strong><a href="https://github.com/jupyter-xeus/xeus-cling">C++ Jupyter Notebook github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212505837.png" alt="picture 6">  </p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>tools</tag>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/06/27/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -25,29 +48,6 @@
         <tag>hello</tag>
         <tag>hide</tag>
         <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++有用的工具网站</title>
-    <url>/2022/06/25/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>分享几个好用的C++在线工具，能帮助我们深入理解C++极其内部原理</p>
-<h2 id="1-Compiler-Explorer"><a href="#1-Compiler-Explorer" class="headerlink" title="1.Compiler Explorer"></a>1.<a href="https://godbolt.org/">Compiler Explorer</a></h2><p><strong>简介：</strong> 这是一个在线汇编代码分析网站，它将C++代码编译成汇编语言，然后用一种用户十分友好的方式显示出来，将C++代码和汇编代码用相同颜色对应起来，当我们把鼠标放到汇编指令时会有对应的指令介绍。它支持用不同版本的编译器和优化级别。它还支持用三方库，包括boost、eigen等。目前已经支持C, C++, C#, F#, Rust, Go, D, Haskell, Swift, Pascal, ispc, Python, Java等超过30多种语言<br><strong>url：</strong> <a href="https://godbolt.org/">godbolt</a><br><strong>github：</strong><a href="https://github.com/compiler-explorer/compiler-explorer">Compiler Explorer github</a></p>
-<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-205729301.png" alt="picture 2">  </p>
-<h2 id="2-wandbox"><a href="#2-wandbox" class="headerlink" title="2.wandbox"></a>2.<a href="https://wandbox.org/">wandbox</a></h2><p><strong>简介：</strong> 一个支持多语言的在线编译的网站，我们可以快速地在里面写实验代码。它支持的语言包括C++、C、rust、python、java等等。它支持多个编译器版本，我们可以用它来测试C++20的新功能<br><strong>url：</strong> <a href="https://wandbox.org/">wandbox</a><br><strong>github：</strong><a href="https://github.com/melpon/wandbox">wandbox github</a></p>
-<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-210905070.png" alt="picture 3">  </p>
-<h2 id="3-Quick-C-Benchmark"><a href="#3-Quick-C-Benchmark" class="headerlink" title="3.Quick C++ Benchmark"></a>3.<a href="https://quick-bench.com/">Quick C++ Benchmark</a></h2><p><strong>简介：</strong> C++代码benchmark的在线工具，我们可以通过它来快速benchmark小的代码片段<br><strong>url：</strong> <a href="https://quick-bench.com/">Quick C++ Benchmark</a><br><strong>github：</strong><a href="https://github.com/FredTingaud">Quick C++ Benchmark github</a></p>
-<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-211122151.png" alt="picture 4">  </p>
-<h2 id="4-Compare-C-Build"><a href="#4-Compare-C-Build" class="headerlink" title="4.Compare C++ Build"></a>4.<a href="https://build-bench.com/">Compare C++ Build</a></h2><p><strong>简介：</strong> 对代码编译进行时间、CPU、内存等开销的测量。它和Quick C++ Benchmark是同一个人写的。<br><strong>url：</strong> <a href="https://build-bench.com/">Compare C++ Build</a><br><strong>github：</strong><a href="https://github.com/FredTingaud">Compare C++ Build github</a></p>
-<p><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212900570.png" alt="picture 7">  </p>
-<h2 id="5-C-Insight"><a href="#5-C-Insight" class="headerlink" title="5.C++ Insight"></a>5.<a href="https://cppinsights.io/">C++ Insight</a></h2><p><strong>简介：</strong> 一个允许我们查看C++编译器如何将C++代码转换的中间文件，尤其是模版的展开的情况，非常insightful。<br><strong>url：</strong> <a href="https://cppinsights.io/">C++ Insight</a><br><strong>github：</strong><a href="https://github.com/andreasfertig/cppinsights">C++ Insight github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-211654271.png" alt="picture 5">  </p>
-<h2 id="6-C-Jupyter-Notebook"><a href="#6-C-Jupyter-Notebook" class="headerlink" title="6.C++ Jupyter Notebook"></a>6.<a href="https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb">C++ Jupyter Notebook</a></h2><p><strong>简介：</strong> 这个工具是Jupyter和C++解释器Cling的一个结合体，它允许我们快速测试代码和可视化数据。<br><strong>url：</strong> <a href="https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb">C++ Jupyter Notebook</a><br><strong>github：</strong><a href="https://github.com/jupyter-xeus/xeus-cling">C++ Jupyter Notebook github</a><br><img src="/../images/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/IMG_20220625-212505837.png" alt="picture 6">  </p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>tools</tag>
-        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -196,7 +196,17 @@
 <ul>
 <li><a href="/2022/07/24/leetcode/leetcode_1109-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/" title="1109. 航班预订统计">1109. 航班预订统计</a></li>
 </ul>
-<h2 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h2><ul>
+<h2 id="5-滑动窗口"><a href="#5-滑动窗口" class="headerlink" title="5. 滑动窗口"></a>5. 滑动窗口</h2><p>滑动窗口的大致算法逻辑如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">  <span class="comment">// 增大窗口</span></span><br><span class="line">  windows.<span class="built_in">add</span>(s[right]);</span><br><span class="line">  ++right;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (window needs shrink) &#123;</span><br><span class="line">    <span class="comment">// 缩小窗口</span></span><br><span class="line">    windows.<span class="built_in">remove</span>(s[left]);</span><br><span class="line">    left++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>滑动窗口算法框架如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 滑动窗口采用双指针实现</span></span><br><span class="line"><span class="comment">// s: 检查的长字符串</span></span><br><span class="line"><span class="comment">// t: 需要的短字符串</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">slidingWindows</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">  unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; need;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> c : t) &#123; need[c] += <span class="number">1</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> valid = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">    <span class="type">char</span> c = s[right];</span><br><span class="line">    ++right;</span><br><span class="line">    <span class="comment">// 进行窗口内数据的一系列更新 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*** debug 输出的位置 ***/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;window: [%d, %d)\n&quot;</span>, left, right);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断左侧窗口是否要收缩 </span></span><br><span class="line">    <span class="keyword">while</span> (window needs shrink) &#123;</span><br><span class="line">      <span class="comment">// d 是将移出窗口的字符</span></span><br><span class="line">      <span class="type">char</span> d = s[left]; </span><br><span class="line">      <span class="comment">// 左移窗口</span></span><br><span class="line">      left++; </span><br><span class="line">      <span class="comment">// 进行窗口内数据的一系列更新 </span></span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中两处 … 表示的更新窗口数据的地方，到时候你直接往里面填就行了。 而且，这两个 … 处的操作分别是右移和左移窗口更新操作，等会你会发现它们操作是完全对称的。</p>
+<ul>
+<li><a href="/2022/07/26/leetcode/leetcode_76-%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2/" title="76. 最小覆盖子串">76. 最小覆盖子串</a></li>
+</ul>
+<h2 id="6-其他"><a href="#6-其他" class="headerlink" title="6. 其他"></a>6. 其他</h2><ul>
 <li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
 </ul>
 ]]></content>
@@ -282,26 +292,6 @@
       </tags>
   </entry>
   <entry>
-    <title>141. 环形链表</title>
-    <url>/2022/07/11/leetcode/leetcode_141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个链表的头节点 head ，判断链表中是否有环。</p>
-<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。</p>
-<p>如果链表中存在环 ，则返回 true 。 否则，返回 false 。</p>
-<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>主要使用快慢指针的思路，快指针每次移动2次，慢指针每次移动一次，当链表中存在环时，快慢指针会指向同一个节点</p>
-<span id="more"></span>
-
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      ListNode* first = head;</span><br><span class="line">      ListNode* second = first;</span><br><span class="line">      <span class="keyword">while</span> (first != <span class="literal">nullptr</span> &amp;&amp; first-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        first = first-&gt;next-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (first != <span class="literal">nullptr</span> &amp;&amp; (first == second)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>hide</tag>
-        <tag>algorithm</tag>
-        <tag>leetcode</tag>
-        <tag>linked-list</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>142. 环形链表2</title>
     <url>/2022/07/11/leetcode/leetcode_142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/</url>
     <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
@@ -314,6 +304,26 @@
 <span id="more"></span>
 
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">      <span class="keyword">if</span> (head-&gt;next == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">      ListNode *first, *second;</span><br><span class="line">      first = second = head;</span><br><span class="line">      <span class="keyword">while</span> (first != <span class="literal">nullptr</span> &amp;&amp; first-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        first = first-&gt;next-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (first == second) &#123;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (first == <span class="literal">nullptr</span> || first-&gt;next == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      second = head;</span><br><span class="line">      <span class="keyword">while</span> (first != second) &#123;</span><br><span class="line">        first = first-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>linked-list</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>141. 环形链表</title>
+    <url>/2022/07/11/leetcode/leetcode_141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个链表的头节点 head ，判断链表中是否有环。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环 ，则返回 true 。 否则，返回 false 。</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>主要使用快慢指针的思路，快指针每次移动2次，慢指针每次移动一次，当链表中存在环时，快慢指针会指向同一个节点</p>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      ListNode* first = head;</span><br><span class="line">      ListNode* second = first;</span><br><span class="line">      <span class="keyword">while</span> (first != <span class="literal">nullptr</span> &amp;&amp; first-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        first = first-&gt;next-&gt;next;</span><br><span class="line">        second = second-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (first != <span class="literal">nullptr</span> &amp;&amp; (first == second)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -523,6 +533,32 @@
         <tag>algorithm</tag>
         <tag>leetcode</tag>
         <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>76. 最小覆盖子串</title>
+    <url>/2022/07/26/leetcode/leetcode_76-%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。</p>
+<p> </p>
+<p>注意：</p>
+<p>对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。<br>如果 s 中存在这样的子串，我们保证它是唯一的答案。
+ </p>
+<p>示例 1：</p>
+<blockquote>
+<p>输入：s &#x3D; “ADOBECODEBANC”, t &#x3D; “ABC”<br>输出：”BANC”</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>套用滑动窗口的框架写出代码</p>
+<span id="more"></span>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">minWindow</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; need;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> val : t) &#123;</span><br><span class="line">            need[val] += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 双指针表示滑动窗口</span></span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> resulti = <span class="number">0</span>, resultj = s.<span class="built_in">size</span>()+<span class="number">100</span>;</span><br><span class="line">        <span class="type">int</span> cureq = <span class="number">0</span>;</span><br><span class="line">        std::unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; curval;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">auto</span> val = s[j];</span><br><span class="line">            <span class="keyword">auto</span> findIter = need.<span class="built_in">find</span>(val);</span><br><span class="line">            <span class="keyword">if</span> (findIter == need.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                ++j;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            curval[val]++;</span><br><span class="line">            <span class="keyword">if</span> (findIter-&gt;second == curval[val]) &#123;</span><br><span class="line">                cureq++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j - i + <span class="number">1</span> &lt; t.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                ++j;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">                <span class="keyword">auto</span> findIter = need.<span class="built_in">find</span>(s[i]);</span><br><span class="line">                <span class="keyword">if</span> (findIter == need.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (curval[s[i]] &gt; findIter-&gt;second) &#123;</span><br><span class="line">                    curval[s[i]]--;</span><br><span class="line">                    i++;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (cureq == need.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j - i &lt; resultj - resulti) &#123;</span><br><span class="line">                    resulti = i;</span><br><span class="line">                    resultj = j;</span><br><span class="line">                    <span class="comment">//std::cout &lt;&lt; &quot;result:  &quot; &lt;&lt; resultj &lt;&lt; &quot;,&quot; &lt;&lt; resulti &lt;&lt;std::endl;</span></span><br><span class="line">                &#125;</span><br><span class="line">                ++j;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            ++j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cureq == need.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">return</span> s.<span class="built_in">substr</span>(resulti, resultj-resulti+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>滑动窗口</tag>
       </tags>
   </entry>
   <entry>
