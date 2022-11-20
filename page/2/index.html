@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="0kgaSVagte2CRB7QN_iqTfRkEK2vAenYZRPV7-11-4I">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -180,6 +181,236 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpeg">
+      <meta itemprop="name" content="Stone-Sail">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Stone-Sail's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/" class="post-title-link" itemprop="url">304. 二维区域和检索</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-11 22:00:00" itemprop="dateCreated datePublished" datetime="2022-07-11T22:00:00+08:00">2022-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-07-17 12:41:09" itemprop="dateModified" datetime="2022-07-17T12:41:09+08:00">2022-07-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/11/leetcode/leetcode_304-二维区域和检索/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个二维矩阵 matrix，以下类型的多个请求：</p>
+<p>计算其子矩形范围内元素的总和，该子矩阵的 左上角 为 (row1, col1) ，右下角 为 (row2, col2) 。<br>实现 NumMatrix 类：</p>
+<p>NumMatrix(int[][] matrix) 给定整数矩阵 matrix 进行初始化<br>int sumRegion(int row1, int col1, int row2, int col2) 返回 左上角 (row1, col1) 、右下角 (row2, col2) 所描述的子矩阵的元素 总和 。</p>
+<p><img src="/../../images/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/IMG_20220717-123926880.png" alt="picture 2">  </p>
+<blockquote>
+<p>输入:<br>[“NumMatrix”,”sumRegion”,”sumRegion”,”sumRegion”]<br>[[[[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]],[2,1,4,3],[1,1,2,2],[1,2,2,4]]<br>输出:<br>[null, 8, 11, 12]<br>解释:<br>NumMatrix numMatrix &#x3D; new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]);<br>numMatrix.sumRegion(2, 1, 4, 3); &#x2F;&#x2F; return 8 (红色矩形框的元素总和)<br>numMatrix.sumRegion(1, 1, 2, 2); &#x2F;&#x2F; return 11 (绿色矩形框的元素总和)<br>numMatrix.sumRegion(1, 2, 2, 4); &#x2F;&#x2F; return 12 (蓝色矩形框的元素总和)</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>根据前缀和的思路解答</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/07/11/leetcode/leetcode_876-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpeg">
+      <meta itemprop="name" content="Stone-Sail">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Stone-Sail's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/11/leetcode/leetcode_876-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9/" class="post-title-link" itemprop="url">876. 链表的中间节点</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-11 22:00:00" itemprop="dateCreated datePublished" datetime="2022-07-11T22:00:00+08:00">2022-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-07-14 00:49:40" itemprop="dateModified" datetime="2022-07-14T00:49:40+08:00">2022-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/07/11/leetcode/leetcode_876-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/11/leetcode/leetcode_876-链表的中间节点/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>833</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定一个头结点为 head 的非空单链表，返回链表的中间结点。</p>
+<p>如果有两个中间结点，则返回第二个中间结点。</p>
+<blockquote>
+<p>输入：[1,2,3,4,5]<br>输出：此列表中的结点 3 (序列化形式：[3,4,5])<br>返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。<br>注意，我们返回了一个 ListNode 类型的对象 ans，这样：<br>ans.val &#x3D; 3, ans.next.val &#x3D; 4, ans.next.next.val &#x3D; 5, 以及 ans.next.next.next &#x3D; NULL.</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>主要使用快慢指针的思路， 快指针每次移动2个节点，慢指针移动一个节点，当快指针到达最后则慢指针指向中间节点</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/11/leetcode/leetcode_876-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -686,7 +917,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-19 00:49:20" itemprop="dateModified" datetime="2022-07-19T00:49:20+08:00">2022-07-19</time>
+                <time title="Modified: 2022-07-27 00:19:50" itemprop="dateModified" datetime="2022-07-27T00:19:50+08:00">2022-07-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -718,14 +949,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>602</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -774,9 +1005,35 @@
 </li>
 <li><a href="/2022/07/11/leetcode/leetcode_304-%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2/" title="304. 二维区域和检索">304. 二维区域和检索</a>
 </li>
-<li><a href="/2022/07/19/leetcode/leetcode_560-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" title="560. 和为k的子数组">560. 和为k的子数组</a></li>
+<li><a href="/2022/07/26/leetcode/leetcode_560-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" title="560. 和为k的子数组">560. 和为k的子数组</a></li>
 </ul>
-<h2 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h2><ul>
+<h2 id="4-差分数组"><a href="#4-差分数组" class="headerlink" title="4. 差分数组"></a>4. 差分数组</h2><p>前缀和主要适用的场景是原始数组不会被修改的情况下，频繁查询某个区间的累加和</p>
+<p>差分数组的主要适用场景是频繁对原始数组的某个区间的元素进行加减，核心代码如下:</p>
+<p>我们先对 nums 数组构造一个 diff 差 分数组，diff[i] 就是 nums[i] 和 nums[i-1] 之差： </p>
+<p><img src="/../../images/leetcode-framework/IMG_20220723-182345788.png" alt="picture 1">  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] diff = <span class="keyword">new</span> <span class="type">int</span>[nums.length]; <span class="comment">// 构造差分数组 diff[0] = nums[0];</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">  diff[i] = nums[i] - nums[i - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>[] res = <span class="keyword">new</span> <span class="type">int</span>[diff.length]; <span class="comment">// 根据差分数组构造结果数组 res[0] = diff[0];</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; diff.length; i++) &#123;</span><br><span class="line">  res[i] = res[i - <span class="number">1</span>] + diff[i];</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>** 这样构造差分数组 diff，就可以快速进行区间增减的操作，如果你想对区间 nums[i..j] 的元素全部加 3，那么只需要让 diff[i] +&#x3D; 3，然后再让 diff[j+1] -&#x3D; 3 即可 **</p>
+<blockquote>
+<p>原理很简单，回想 diff 数组反推 nums 数组的过程，diff[i] +&#x3D; 3 意味着给 nums[i..] 所有的元素都 加了 3，然后 diff[j+1] -&#x3D; 3 又意味着对于 nums[j+1..] 所有元素再减 3，那综合起来，是不是就是对 nums[i..j] 中的所有元素都加 3 了？</p>
+</blockquote>
+<p>差分数组工具类：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Difference</span> &#123;</span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">Difference</span>(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; num) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    diff_.<span class="built_in">emplace_back</span>(num[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">1</span>; i &lt; num.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">      diff_.<span class="built_in">emplace</span>(diff[i] - diff[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* 给闭区间 [i,j] 增加 val（可以是负数）*/</span></span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">increment</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; i &lt; diff_.<span class="built_in">size</span>()) &#123;</span><br><span class="line">      diff_[i] += val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (j+<span class="number">1</span> &gt; <span class="number">0</span> &amp;&amp; j+<span class="number">1</span> &lt; diff_.<span class="built_in">size</span>()) &#123;</span><br><span class="line">      diff_[j+<span class="number">1</span>] -= val;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function">std::vector&lt;in&gt; <span class="title">result</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (diff_.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> std::<span class="built_in">vector</span>&lt;in&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">result</span><span class="params">(diff_.size(), <span class="number">0</span>)</span></span>;</span><br><span class="line">    result[<span class="number">0</span>] = diff_[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; diff_.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">      result[i] = result[i<span class="number">-1</span>] + diff_[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">  vector&lt;<span class="type">int</span>&gt; diff_; <span class="comment">// 差分数组  </span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="/2022/07/24/leetcode/leetcode_1109-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/" title="1109. 航班预订统计">1109. 航班预订统计</a></li>
+</ul>
+<h2 id="5-滑动窗口"><a href="#5-滑动窗口" class="headerlink" title="5. 滑动窗口"></a>5. 滑动窗口</h2><p>滑动窗口的大致算法逻辑如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">  <span class="comment">// 增大窗口</span></span><br><span class="line">  windows.<span class="built_in">add</span>(s[right]);</span><br><span class="line">  ++right;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (window needs shrink) &#123;</span><br><span class="line">    <span class="comment">// 缩小窗口</span></span><br><span class="line">    windows.<span class="built_in">remove</span>(s[left]);</span><br><span class="line">    left++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>滑动窗口算法框架如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 滑动窗口采用双指针实现</span></span><br><span class="line"><span class="comment">// s: 检查的长字符串</span></span><br><span class="line"><span class="comment">// t: 需要的短字符串</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">slidingWindows</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">  unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; need;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> c : t) &#123; need[c] += <span class="number">1</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> valid = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">    <span class="type">char</span> c = s[right];</span><br><span class="line">    ++right;</span><br><span class="line">    <span class="comment">// 进行窗口内数据的一系列更新 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*** debug 输出的位置 ***/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;window: [%d, %d)\n&quot;</span>, left, right);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断左侧窗口是否要收缩 </span></span><br><span class="line">    <span class="keyword">while</span> (window needs shrink) &#123;</span><br><span class="line">      <span class="comment">// d 是将移出窗口的字符</span></span><br><span class="line">      <span class="type">char</span> d = s[left]; </span><br><span class="line">      <span class="comment">// 左移窗口</span></span><br><span class="line">      left++; </span><br><span class="line">      <span class="comment">// 进行窗口内数据的一系列更新 </span></span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中两处 … 表示的更新窗口数据的地方，到时候你直接往里面填就行了。 而且，这两个 … 处的操作分别是右移和左移窗口更新操作，等会你会发现它们操作是完全对称的。</p>
+<ul>
+<li><a href="/2022/07/26/leetcode/leetcode_76-%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2/" title="76. 最小覆盖子串">76. 最小覆盖子串</a></li>
+</ul>
+<h2 id="6-其他"><a href="#6-其他" class="headerlink" title="6. 其他"></a>6. 其他</h2><ul>
 <li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
 </ul>
 
@@ -1131,185 +1388,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/06/12/malloc-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpeg">
-      <meta itemprop="name" content="Stone-Sail">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Stone-Sail's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/12/malloc-tutorial/" class="post-title-link" itemprop="url">malloc实现概述</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-12 16:24:29" itemprop="dateCreated datePublished" datetime="2022-06-12T16:24:29+08:00">2022-06-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-12 01:16:16" itemprop="dateModified" datetime="2022-07-12T01:16:16+08:00">2022-07-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/memory/" itemprop="url" rel="index"><span itemprop="name">memory</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/06/12/malloc-tutorial/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/06/12/malloc-tutorial/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.9k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-malloc-简介"><a href="#1-malloc-简介" class="headerlink" title="1. malloc 简介"></a>1. malloc 简介</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">malloc</span><span class="params">(<span class="type">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>malloc() 函数用来动态的分配内存空间:<br>【参数说明】size 为需要分配的内存空间的大小，以字节（Byte）计<br>【返回值】分配成功返回指向该内存的地址，失败则返回 NULL<br>【函数说明】malloc在<code>堆</code>区分配一块指定大小的内存空间，用来存放数据。这块内存空间在函数执行完成后不会被初始化，它们的值是未知的</p>
-<img src="/images/malloc-tutorial/IMG_20220612-165355450.png" width="500" height="450">
-
-
-<p>实现malloc的功能可以有很多方法，本文使用<strong>sbrk</strong>来管理堆上内存分配。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">sbrk</span><span class="params">(<span class="type">intptr_t</span> increment)</span></span></span><br></pre></td></tr></table></figure>
-
-<p>Tips：<br>sbrk(0) 通常用于返回堆定的指针<br>sbrk(size) 用于堆上申请size大小的空间，同时返回指向新生成的内存的地址</p>
-<h2 id="2-使用sbrk简单实现malloc-v1-0"><a href="#2-使用sbrk简单实现malloc-v1-0" class="headerlink" title="2. 使用sbrk简单实现malloc v1.0"></a>2. 使用sbrk简单实现malloc v1.0</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;assert.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">malloc</span><span class="params">(<span class="type">size_t</span> size)</span> </span>&#123;</span><br><span class="line">  <span class="type">void</span> *p = <span class="built_in">sbrk</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="type">void</span> *request = <span class="built_in">sbrk</span>(size); </span><br><span class="line">  <span class="keyword">if</span> (request == (<span class="type">void</span>*) <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>; <span class="comment">// sbrk failed.</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">assert</span>(p == request); <span class="comment">// Not thread safe.</span></span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Attention: head in increasing downgrade, so the returns of a pointer to thre previous top of the heap is ok</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>以上代码段使用sbrk简单实现了malloc的v1.0版本：在堆区申请size大小的空间并返回对应的指针，当申请不成功时返回nullptr。</p>
-<p>malloc v1.0版本实现了基本的功能，接下来需要考虑内存的释放：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void free(void *ptr);</span><br></pre></td></tr></table></figure>
-<p>【参数说明】ptr指针 指向一个要释放内存的内存<br>【函数说明】释放通过调用 malloc、calloc 或 realloc 进行分配内存的。如果传递的参数是一个空指针，则不会执行任何动作。</p>
-<p>malloc v1.0仍然存在一下两个问题：</p>
-<ol>
-<li>如果把malloc v1.0申请的指针传递给free函数，我们无法从原始指针中获取分配的内存大小信息，因此无法正确的释放内存；</li>
-<li>由于内存是连续的，我们无法释放一块中间的区域给系统，因此需要将已释放而未返回给操作系统的内存重新利用起来；</li>
-</ol>
-<h2 id="3-malloc-v2-0"><a href="#3-malloc-v2-0" class="headerlink" title="3. malloc v2.0"></a>3. malloc v2.0</h2><h3 id="3-1-内存数据结构"><a href="#3-1-内存数据结构" class="headerlink" title="3.1 内存数据结构"></a>3.1 内存数据结构</h3><ol>
-<li>解决第一个问题的常见技巧是将相关数据写入meta data并存储在我们返回的指针下方的某个空间中，如下图所示：</li>
-</ol>
-<img src="/images/malloc-tutorial/IMG_20220612-180309917.png" width="500" height="300">
-
-<blockquote>
-<p>假设现在堆顶指向0x1000，需要申请0x400个字节。malloc v1.0调用sbrk申请0x400个字节并且会返回指向0x1000的指针。如果我们存储大小为0x10个自己的<code>meta data</code>，则需要返回0x1010给调用方，0x1000~0x1010则存储meta data。</p>
-</blockquote>
-<ol start="2">
-<li>为了能重复利用已经释放的内存，我们可以标记该块已被释放而不将其返回给操作系统，以便将来对malloc的调用可以重新使用该块</li>
-</ol>
-<p>基于以上两点因此需要能够访问每个块的元信息，并为了为简单起见，使用单链表</p>
-<p>所以，对于每个块，我们都希望有类似的东西</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">block_meta</span> &#123;</span><br><span class="line">  <span class="type">size_t</span> size;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">block_meta</span> *next;</span><br><span class="line">  <span class="type">int</span> free;</span><br><span class="line">  <span class="type">int</span> magic; <span class="comment">// For debugging only. <span class="doctag">TODO:</span> remove this in non-debug mode. It help up to see which code modified the struct last</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> META_SIZE sizeof(struct block_meta)</span></span><br></pre></td></tr></table></figure>
-
-<p>从block_meta中，可以获取块的大小，是否空闲，以及下一个块是什么。这里有一个用于调试目的的幻数，但这并不是必需的。</p>
-<p>此外还需要链接列表的头部：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> *global_base = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h3><p>可以写出malloc v2.0实现流程如下：</p>
-<ol>
-<li>优先使用空闲的内存块</li>
-<li>如果无法找到合适的空闲空间，再使用sbrk从操作系统请求空间并将我们的新块添加到链表的末尾</li>
-</ol>
-<p>查找合适的空闲空间</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">block_meta</span> *<span class="built_in">find_free_block</span>(<span class="keyword">struct</span> block_meta **last, <span class="type">size_t</span> size) &#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">block_meta</span> *current = global_base;</span><br><span class="line">  <span class="comment">// find the first free and larger size</span></span><br><span class="line">  <span class="keyword">while</span> (current &amp;&amp; !(current-&gt;free &amp;&amp; current-&gt;size &gt;= size)) &#123;</span><br><span class="line">    *last = current;</span><br><span class="line">    current = current-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> current;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用sbrk从操作系统中申请空间</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">block_meta</span> *<span class="built_in">request_space</span>(<span class="keyword">struct</span> block_meta* last, <span class="type">size_t</span> size) &#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">block_meta</span> *block;</span><br><span class="line">  block = <span class="built_in">sbrk</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="type">void</span> *request = <span class="built_in">sbrk</span>(size + META_SIZE);</span><br><span class="line">  <span class="built_in">assert</span>((<span class="type">void</span>*)block == request); <span class="comment">// Not thread safe.</span></span><br><span class="line">  <span class="keyword">if</span> (request == (<span class="type">void</span>*) <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>; <span class="comment">// sbrk failed.</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (last) &#123; <span class="comment">// NULL on first request.</span></span><br><span class="line">    last-&gt;next = block;</span><br><span class="line">  &#125;</span><br><span class="line">  block-&gt;size = size;</span><br><span class="line">  block-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">  block-&gt;free = <span class="number">0</span>;</span><br><span class="line">  block-&gt;magic = <span class="number">0x12345678</span>;</span><br><span class="line">  <span class="keyword">return</span> block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>获取block_meta位置</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">block_meta</span> *<span class="built_in">get_block_ptr</span>(<span class="type">void</span> *ptr) &#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">struct</span> block_meta*)ptr - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>malloc v2.0</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">malloc</span><span class="params">(<span class="type">size_t</span> size)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">block_meta</span> *block;</span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> align size?</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (size &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!global_base) &#123; <span class="comment">// First call.</span></span><br><span class="line">    block = <span class="built_in">request_space</span>(<span class="literal">NULL</span>, size);</span><br><span class="line">    <span class="keyword">if</span> (!block) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    global_base = block;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">struct</span> block_meta *last = global_base;</span><br><span class="line">    block = <span class="built_in">find_free_block</span>(&amp;last, size);</span><br><span class="line">    <span class="keyword">if</span> (!block) &#123; <span class="comment">// Failed to find free block.</span></span><br><span class="line">      block = <span class="built_in">request_space</span>(last, size);</span><br><span class="line">      <span class="keyword">if</span> (!block) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;      <span class="comment">// Found free block</span></span><br><span class="line">      <span class="comment">// <span class="doctag">TODO:</span> consider splitting block here.</span></span><br><span class="line">      block-&gt;free = <span class="number">0</span>;</span><br><span class="line">      block-&gt;magic = <span class="number">0x77777777</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>(block+<span class="number">1</span>);  <span class="comment">// return a pointer to the region after block_meta</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>free实现</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">free</span><span class="params">(<span class="type">void</span> *ptr)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!ptr) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> consider merging blocks once splitting blocks is implemented.</span></span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">block_meta</span>* block_ptr = <span class="built_in">get_block_ptr</span>(ptr);</span><br><span class="line">  <span class="built_in">assert</span>(block_ptr-&gt;free == <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">assert</span>(block_ptr-&gt;magic == <span class="number">0x77777777</span> || block_ptr-&gt;magic == <span class="number">0x12345678</span>);</span><br><span class="line">  block_ptr-&gt;free = <span class="number">1</span>;</span><br><span class="line">  block_ptr-&gt;magic = <span class="number">0x55555555</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用malloc v2.0提供的malloc和free函数，我们已经可以使用自定义内存分配器编写程序了。但在实际的应用场景中，我们还需要实现几个更常见的函数，realloc和calloc。</p>
-<h2 id="4-Realloc-和-Calloc的实现"><a href="#4-Realloc-和-Calloc的实现" class="headerlink" title="4. Realloc 和 Calloc的实现"></a>4. Realloc 和 Calloc的实现</h2><h3 id="4-1-Realloc"><a href="#4-1-Realloc" class="headerlink" title="4.1 Realloc"></a>4.1 Realloc</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">realloc</span><span class="params">(<span class="type">void</span> *ptr, <span class="type">size_t</span> size)</span></span></span><br></pre></td></tr></table></figure>
-<p>整体流程如下：</p>
-<pre class="mermaid">graph TD;
-    s[start] --> ptr_judge{ptr is null}
-    ptr_judge --> |Y|call_malloc["call malloc"] --> e["end"]
-    ptr_judge --> |N|size_judge{size > ptr.size}
-    size_judge --> |N|do_nothing["do nothing"]  --> e
-    size_judge --> |Y|malloc_size["call malloc(size)"]
-    malloc_size --> memcpy(ptr, new_ptr)
-    memcpy --> free["free ptr"] --> e</pre>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">realloc</span><span class="params">(<span class="type">void</span> *ptr, <span class="type">size_t</span> size)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!ptr) &#123;</span><br><span class="line">    <span class="comment">// NULL ptr. realloc should act like malloc.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">malloc</span>(size);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">block_meta</span>* block_ptr = <span class="built_in">get_block_ptr</span>(ptr);</span><br><span class="line">  <span class="keyword">if</span> (block_ptr-&gt;size &gt;= size) &#123;</span><br><span class="line">    <span class="comment">// We have enough space. Could free some once we implement split.</span></span><br><span class="line">    <span class="keyword">return</span> ptr;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Need to really realloc. Malloc new space and free old space.</span></span><br><span class="line">  <span class="comment">// Then copy old data to new space.</span></span><br><span class="line">  <span class="type">void</span> *new_ptr;</span><br><span class="line">  new_ptr = <span class="built_in">malloc</span>(size);</span><br><span class="line">  <span class="keyword">if</span> (!new_ptr) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>; <span class="comment">// <span class="doctag">TODO:</span> set errno on failure.</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">memcpy</span>(new_ptr, ptr, block_ptr-&gt;size);</span><br><span class="line">  <span class="built_in">free</span>(ptr);</span><br><span class="line">  <span class="keyword">return</span> new_ptr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-Calloc"><a href="#4-2-Calloc" class="headerlink" title="4.2 Calloc"></a>4.2 Calloc</h3><p>对Calloc我们仅仅需要再返回指针前对内存进行初始化：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">calloc</span><span class="params">(<span class="type">size_t</span> nelem, <span class="type">size_t</span> elsize)</span> </span>&#123;</span><br><span class="line">  <span class="type">size_t</span> size = nelem * elsize; <span class="comment">// <span class="doctag">TODO:</span> check for overflow.</span></span><br><span class="line">  <span class="type">void</span> *ptr = <span class="built_in">malloc</span>(size);</span><br><span class="line">  <span class="built_in">memset</span>(ptr, <span class="number">0</span>, size);</span><br><span class="line">  <span class="keyword">return</span> ptr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1377,7 +1459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1390,7 +1472,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1429,12 +1511,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">22k</span>
+    <span title="Symbols count total">27k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">20 mins.</span>
+    <span title="Reading time total">24 mins.</span>
 </div>
 
         
