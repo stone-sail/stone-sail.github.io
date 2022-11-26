@@ -144,6 +144,8 @@
     <content><![CDATA[<h1 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h1><h2 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1. 二叉树"></a>1. 二叉树</h2><p>刷题一般现从二叉树开始刷，因为二叉树容易培养框架思维，而且大部分的算法技巧本质上都是二叉树的遍历问题：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">traverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 前序遍历代码位置</span></span><br><span class="line">  <span class="built_in">traverse</span>(root-&gt;left);</span><br><span class="line">  <span class="comment">// 中序遍历代码位置</span></span><br><span class="line">  <span class="built_in">traverse</span>(root-&gt;right);</span><br><span class="line">  <span class="comment">// 后续遍历代码位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上几行代码，几乎所有的二叉树题目都是一套这个框架就出来了。</p>
+<span id="more"></span>
+
 <h3 id="1-1-前序遍历"><a href="#1-1-前序遍历" class="headerlink" title="1.1 前序遍历"></a>1.1 前序遍历</h3><ul>
 <li><a href="/2022/07/26/leetcode/leetcode_105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/" title="105 从前序与中序遍历序列构造二叉树">105 从前序与中序遍历序列构造二叉树</a></li>
 </ul>
@@ -206,7 +208,11 @@
 <ul>
 <li><a href="/2022/07/26/leetcode/leetcode_76-%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2/" title="76. 最小覆盖子串">76. 最小覆盖子串</a></li>
 </ul>
-<h2 id="6-其他"><a href="#6-其他" class="headerlink" title="6. 其他"></a>6. 其他</h2><ul>
+<p>字符串排列<br>给定两个字符串s1和s2，写一个函数来判断s2是否包含s1的排列<br>换句话说，第一个字符串的排列之一是第二个字符串的子串</p>
+<ul>
+<li><a href="/2022/11/26/leetcode/leetcode_567-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/" title="567. 字符串的排列">567. 字符串的排列</a></li>
+</ul>
+<h2 id="7-其他"><a href="#7-其他" class="headerlink" title="7. 其他"></a>7. 其他</h2><ul>
 <li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
 </ul>
 ]]></content>
@@ -515,16 +521,19 @@
       </tags>
   </entry>
   <entry>
-    <title>560. 和为k的子数组</title>
-    <url>/2022/07/26/leetcode/leetcode_560-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</url>
-    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。</p>
+    <title>567. 字符串的排列</title>
+    <url>/2022/11/26/leetcode/leetcode_567-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。如果是，返回 true ；否则，返回 false 。</p>
+<p>换句话说，s1 的排列之一是 s2 的 子串 。</p>
 <p>示例 1：</p>
-<p>输入：nums &#x3D; [1,1,1], k &#x3D; 2<br>输出：2<br>示例 2：</p>
-<p>输入：nums &#x3D; [1,2,3], k &#x3D; 3<br>输出：2</p>
-<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>先计算出前缀和，然后使用前缀和之差计算出两个索引之间的数组之和</p>
+<blockquote>
+<p>输入：s1 &#x3D; “ab” s2 &#x3D; “eidbaooo”<br>输出：true<br>解释：s2 包含 s1 的排列之一 (“ba”).</p>
+</blockquote>
+<p>输入：s1&#x3D; “ab” s2 &#x3D; “eidboaoo”<br>输出：false</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>套用滑动窗口的框架写出代码</p>
 <span id="more"></span>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">subarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> s=<span class="number">0</span>,pre=<span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; m;</span><br><span class="line">        m[<span class="number">0</span>]=<span class="number">1</span>;<span class="comment">//初始化的意义, 处理pre-k = 0的情况，此时个数应该增加1</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            pre+=nums[i];  </span><br><span class="line">            <span class="keyword">if</span>(m.<span class="built_in">find</span>(pre-k)!=m.<span class="built_in">end</span>())&#123;</span><br><span class="line">                <span class="comment">// std::cout &lt;&lt; &quot;find: &quot; &lt;&lt; pre -k &lt;&lt; &quot;,&quot; &lt;&lt; m[pre-k] &lt;&lt;std::endl;</span></span><br><span class="line">                s+=m[pre-k];</span><br><span class="line">            &#125;</span><br><span class="line">            m[pre]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">checkInclusion</span><span class="params">(string s1, string s2)</span> </span>&#123;</span><br><span class="line">      unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; label;</span><br><span class="line">      unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; current;</span><br><span class="line">      <span class="type">int</span> currentmet = <span class="number">0</span>;</span><br><span class="line">      for_each(s1.<span class="built_in">begin</span>(), s1.<span class="built_in">end</span>(), [&amp;label](<span class="type">const</span> <span class="type">char</span> val)&#123;++label[val];&#125;);</span><br><span class="line">      <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span> (j &lt; s2.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="type">char</span> c = s2[j];</span><br><span class="line">        ++j;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;c: &quot;</span> &lt;&lt; c &lt;&lt; <span class="string">&quot; currentmet: &quot;</span> &lt;&lt; currentmet &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">if</span> (s1.<span class="built_in">find</span>(c) != string::npos) &#123;</span><br><span class="line">          <span class="keyword">if</span> (++current[c] == label[c]) &#123;</span><br><span class="line">            ++currentmet;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(j - i &gt;= s1.<span class="built_in">size</span>()) &#123;</span><br><span class="line">          <span class="keyword">if</span> (currentmet == label.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="type">char</span> d = s2[i];</span><br><span class="line">          ++i;</span><br><span class="line">          <span class="keyword">if</span> (s1.<span class="built_in">find</span>(d) != string::npos) &#123;</span><br><span class="line">            <span class="keyword">if</span> (current[d] == label[d]) &#123;</span><br><span class="line">              --currentmet;</span><br><span class="line">            &#125;</span><br><span class="line">            --current[d];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -532,7 +541,7 @@
         <tag>hide</tag>
         <tag>algorithm</tag>
         <tag>leetcode</tag>
-        <tag>前缀和</tag>
+        <tag>滑动窗口</tag>
       </tags>
   </entry>
   <entry>
@@ -603,6 +612,27 @@
         <tag>algorithm</tag>
         <tag>leetcode</tag>
         <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>560. 和为k的子数组</title>
+    <url>/2022/07/26/leetcode/leetcode_560-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。</p>
+<p>示例 1：</p>
+<p>输入：nums &#x3D; [1,1,1], k &#x3D; 2<br>输出：2<br>示例 2：</p>
+<p>输入：nums &#x3D; [1,2,3], k &#x3D; 3<br>输出：2</p>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>先计算出前缀和，然后使用前缀和之差计算出两个索引之间的数组之和</p>
+<span id="more"></span>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">subarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> s=<span class="number">0</span>,pre=<span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; m;</span><br><span class="line">        m[<span class="number">0</span>]=<span class="number">1</span>;<span class="comment">//初始化的意义, 处理pre-k = 0的情况，此时个数应该增加1</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            pre+=nums[i];  </span><br><span class="line">            <span class="keyword">if</span>(m.<span class="built_in">find</span>(pre-k)!=m.<span class="built_in">end</span>())&#123;</span><br><span class="line">                <span class="comment">// std::cout &lt;&lt; &quot;find: &quot; &lt;&lt; pre -k &lt;&lt; &quot;,&quot; &lt;&lt; m[pre-k] &lt;&lt;std::endl;</span></span><br><span class="line">                s+=m[pre-k];</span><br><span class="line">            &#125;</span><br><span class="line">            m[pre]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+        <tag>algorithm</tag>
+        <tag>leetcode</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
 </search>
