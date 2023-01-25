@@ -21,22 +21,23 @@
     var CONFIG = {"hostname":"stone-sail.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="1. Description给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。 异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。 示例 1：  输入: s &#x3D; “cbaebabacd”, p &#x3D; “abc”输出: [0,6]解释:起始索引等于 0 的子串是 “cba”, 它是 “abc” 的异位词。起">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://stone-sail.github.io/2022/06/27/hello-world/index.html">
+<meta property="og:title" content="438. 找到字符串中所有字母异位词">
+<meta property="og:url" content="http://stone-sail.github.io/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/index.html">
 <meta property="og:site_name" content="Stone-Sail&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1. Description给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。 异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。 示例 1：  输入: s &#x3D; “cbaebabacd”, p &#x3D; “abc”输出: [0,6]解释:起始索引等于 0 的子串是 “cba”, 它是 “abc” 的异位词。起">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-06-27T14:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-11T17:16:16.445Z">
+<meta property="article:published_time" content="2022-11-26T14:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-26T14:18:26.323Z">
 <meta property="article:author" content="Stone-Sail">
-<meta property="article:tag" content="hello">
 <meta property="article:tag" content="hide">
-<meta property="article:tag" content="next">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="滑动窗口">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://stone-sail.github.io/2022/06/27/hello-world/">
+<link rel="canonical" href="http://stone-sail.github.io/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/">
 
 
 <script id="page-configurations">
@@ -49,7 +50,7 @@
   };
 </script>
 
-  <title>Hello World | Stone-Sail's Blog</title>
+  <title>438. 找到字符串中所有字母异位词 | Stone-Sail's Blog</title>
   
 
 
@@ -192,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/06/27/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://stone-sail.github.io/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpeg">
@@ -205,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          438. 找到字符串中所有字母异位词
         </h1>
 
         <div class="post-meta">
@@ -214,27 +215,17 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-06-27 22:00:00" itemprop="dateCreated datePublished" datetime="2022-06-27T22:00:00+08:00">2022-06-27</time>
+              <time title="Created: 2022-11-26 22:00:00 / Modified: 22:18:26" itemprop="dateCreated datePublished" datetime="2022-11-26T22:00:00+08:00">2022-11-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-12 01:16:16" itemprop="dateModified" datetime="2022-07-12T01:16:16+08:00">2022-07-12</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/next/" itemprop="url" rel="index"><span itemprop="name">next</span></a>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
                 </span>
             </span>
 
@@ -254,8 +245,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/06/27/hello-world/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/06/27/hello-world/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/26/leetcode/leetcode_438-找到字符串中所有字母异位词/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -265,7 +256,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>367</span>
+              <span>983</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -284,20 +275,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description"></a>1. Description</h2><p>给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。</p>
+<p>异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。</p>
+<p>示例 1：</p>
+<blockquote>
+<p>输入: s &#x3D; “cbaebabacd”, p &#x3D; “abc”<br>输出: [0,6]<br>解释:<br>起始索引等于 0 的子串是 “cba”, 它是 “abc” 的异位词。<br>起始索引等于 6 的子串是 “bac”, 它是 “abc” 的异位词。</p>
+</blockquote>
+<blockquote>
+<p>输入: s &#x3D; “abab”, p &#x3D; “ab”<br>输出: [0,1,2]<br>解释:<br>起始索引等于 0 的子串是 “ab”, 它是 “ab” 的异位词。<br>起始索引等于 1 的子串是 “ba”, 它是 “ab” 的异位词。<br>起始索引等于 2 的子串是 “ab”, 它是 “ab” 的异位词。</p>
+</blockquote>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h2><p>套用滑动窗口的框架写出代码</p>
+<span id="more"></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">findAnagrams</span><span class="params">(string s, string p)</span> </span>&#123;</span><br><span class="line">      vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">      unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; label;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">auto</span> c : p) &#123; ++label[c]; &#125;</span><br><span class="line">      <span class="type">int</span> curmet = label.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="type">char</span> c = s[right];</span><br><span class="line">        ++right;</span><br><span class="line">        <span class="keyword">if</span> (label.<span class="built_in">find</span>(c) != label.<span class="built_in">end</span>()) &#123;</span><br><span class="line">          <span class="keyword">if</span> (--label[c] == <span class="number">0</span>) &#123;</span><br><span class="line">            --curmet;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (right - left &gt;= p.<span class="built_in">size</span>()) &#123;</span><br><span class="line">          <span class="keyword">if</span> (curmet == <span class="number">0</span>) &#123;</span><br><span class="line">            result.<span class="built_in">emplace_back</span>(left);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="type">char</span> d = s[left];</span><br><span class="line">          ++left;</span><br><span class="line">          <span class="keyword">if</span> (label.<span class="built_in">find</span>(d) != label.<span class="built_in">end</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (label[d] == <span class="number">0</span>) &#123;</span><br><span class="line">              ++curmet;</span><br><span class="line">            &#125;</span><br><span class="line">            ++label[d];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -312,7 +302,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://stone-sail.github.io/2022/06/27/hello-world/" title="Hello World">http://stone-sail.github.io/2022/06/27/hello-world/</a>
+    <a href="http://stone-sail.github.io/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" title="438. 找到字符串中所有字母异位词">http://stone-sail.github.io/2022/11/26/leetcode/leetcode_438-找到字符串中所有字母异位词/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -323,9 +313,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hello/" rel="tag"># hello</a>
               <a href="/tags/hide/" rel="tag"># hide</a>
-              <a href="/tags/next/" rel="tag"># next</a>
+              <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+              <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag"># 滑动窗口</a>
           </div>
 
         
@@ -334,13 +325,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/06/27/leetcode/leetcode-framework/" rel="prev" title="leetcode framework">
-      <i class="fa fa-chevron-left"></i> leetcode framework
+    <a href="/2022/11/26/leetcode/leetcode_567-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/" rel="prev" title="567. 字符串的排列">
+      <i class="fa fa-chevron-left"></i> 567. 字符串的排列
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/07/03/leetcode/leetcode_23-%E5%90%88%E5%B9%B6K%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/" rel="next" title="23. 合并K个升序链表">
-      23. 合并K个升序链表 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -406,7 +394,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Description"><span class="nav-text">1. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Solution"><span class="nav-text">2. Solution</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -582,9 +570,9 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://stone-sail.github.io/2022/06/27/hello-world/";
-    this.page.identifier = "2022/06/27/hello-world/";
-    this.page.title = "Hello World";
+    this.page.url = "http://stone-sail.github.io/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/";
+    this.page.identifier = "2022/11/26/leetcode/leetcode_438-找到字符串中所有字母异位词/";
+    this.page.title = "438. 找到字符串中所有字母异位词";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

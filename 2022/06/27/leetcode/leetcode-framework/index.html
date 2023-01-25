@@ -30,7 +30,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://stone-sail.github.io/images/leetcode-framework/IMG_20220723-182345788.png">
 <meta property="article:published_time" content="2022-06-27T14:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-26T13:45:06.368Z">
+<meta property="article:modified_time" content="2023-01-25T07:04:07.091Z">
 <meta property="article:author" content="Stone-Sail">
 <meta property="article:tag" content="algorithm">
 <meta property="article:tag" content="leetcode">
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-26 21:45:06" itemprop="dateModified" datetime="2022-11-26T21:45:06+08:00">2022-11-26</time>
+                <time title="Modified: 2023-01-25 15:04:07" itemprop="dateModified" datetime="2023-01-25T15:04:07+08:00">2023-01-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,14 +262,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.9k</span>
+              <span>5.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -351,7 +351,31 @@
 <p>字符串排列<br>给定两个字符串s1和s2，写一个函数来判断s2是否包含s1的排列<br>换句话说，第一个字符串的排列之一是第二个字符串的子串</p>
 <ul>
 <li><a href="/2022/11/26/leetcode/leetcode_567-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/" title="567. 字符串的排列">567. 字符串的排列</a></li>
+<li><a href="/2022/11/26/leetcode/leetcode_438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" title="438. 找到字符串中所有字母异位词">438. 找到字符串中所有字母异位词</a></li>
 </ul>
+<h2 id="6-二分查找"><a href="#6-二分查找" class="headerlink" title="6. 二分查找"></a>6. 二分查找</h2><ol>
+<li>查找某个数</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int binarySearch(const std::vector&lt;int&gt;&amp; array, int val) &#123;</span><br><span class="line">  int left = 0, right = array.size();</span><br><span class="line">  while(left &lt; right) &#123;</span><br><span class="line">    int mid = left  + (right - left) / 2;</span><br><span class="line">    if (num[mid] == target) &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125; else if (nums[mid] &lt; target) &#123;</span><br><span class="line">      left = ...;</span><br><span class="line">    &#125; else if (nums[mid] &gt; target) &#123;</span><br><span class="line">      right = ...;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>寻找左侧边界的二分搜索</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int left_bound(const std::vector&lt;int&gt;&amp; array, int val) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size();  // 注意</span><br><span class="line"></span><br><span class="line">  while (left &lt; right) &#123;  // 注意</span><br><span class="line">    int mid = left + (right - left) / 2;</span><br><span class="line">    </span><br><span class="line">    if (array[mid] == val) &#123;</span><br><span class="line">      right = mid;</span><br><span class="line">    &#125; else if (array[mid] &lt; val) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else if (array[mid] &gt; val) &#123;</span><br><span class="line">      right = mid;  // 注意</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>寻找右侧边界的二分搜索</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int right_bound(const std::vector&lt;int&gt;&amp; array, int val) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size();  // 注意</span><br><span class="line"></span><br><span class="line">  while (left &lt; right) &#123; // 注意</span><br><span class="line">    int mid = left + (right - left) / 2;</span><br><span class="line">    </span><br><span class="line">    if (array[mid] == val) &#123;</span><br><span class="line">      left = mid + 1;   // 注意</span><br><span class="line">    &#125; else if (array[mid] &lt; val) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else if (array[mid] &gt; val) &#123;</span><br><span class="line">      right = mid;   // 注意  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return left - 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>全部统一成两端都闭</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">int binary_search(const std::vector&lt;int&gt;&amp; array, int target) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line"></span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size() - 1;</span><br><span class="line">  while (left &lt;= right) &#123;</span><br><span class="line">    int mid = left + (right - left) / 2;</span><br><span class="line">    </span><br><span class="line">    if (array[mid] == target) &#123;</span><br><span class="line">      return mid;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (array[mid] &lt; target) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      right = mid - 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int left_bound(const std::vector&lt;int&gt;&amp; array, int target) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line"></span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size() - 1;</span><br><span class="line">  while (left &lt;= right) &#123;</span><br><span class="line">    if (array[mid] == target) &#123;</span><br><span class="line">      right = mid - 1;  // attention</span><br><span class="line">    &#125; else if (array[mid] &lt; target) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else if (array[mid] &gt; target) &#123;</span><br><span class="line">      right = mid - 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // attention</span><br><span class="line">  // 最后要检查 left 越界的情况</span><br><span class="line">  if (left &gt;= nums.length || nums[left] != target) return -1;</span><br><span class="line"></span><br><span class="line">  return left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int right_bound(const std::vector&lt;int&gt;&amp; array, int target) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line"></span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size() - 1;</span><br><span class="line">  while (left &lt;= right) &#123;</span><br><span class="line">    if (array[mid] == target) &#123;</span><br><span class="line">      left = mid +1 1;   // attention</span><br><span class="line">    &#125; else if (array[mid] &lt; target) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else if (array[mid] &gt; target) &#123;</span><br><span class="line">      right = mid - 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // attention</span><br><span class="line">  // 最后要检查 left 越界的情况</span><br><span class="line">  if (right &lt; 0 || nums[right] != target) return -1;</span><br><span class="line"></span><br><span class="line">  return right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
 <h2 id="7-其他"><a href="#7-其他" class="headerlink" title="7. 其他"></a>7. 其他</h2><ul>
 <li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
 </ul>
@@ -463,7 +487,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">1. 二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.1 前序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.2 中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.3 后序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-linked-list"><span class="nav-text">2. linked list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">3. 前缀和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84"><span class="nav-text">4. 差分数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-text">5. 滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%85%B6%E4%BB%96"><span class="nav-text">7. 其他</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">1. 二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.1 前序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.2 中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.3 后序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-linked-list"><span class="nav-text">2. linked list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">3. 前缀和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84"><span class="nav-text">4. 差分数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-text">5. 滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-text">6. 二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%85%B6%E4%BB%96"><span class="nav-text">7. 其他</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -479,7 +503,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -522,7 +546,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-fa fa-heart"></i>
   </span>
@@ -531,12 +555,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">28k</span>
+    <span title="Symbols count total">31k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">25 mins.</span>
+    <span title="Reading time total">28 mins.</span>
 </div>
 
         
