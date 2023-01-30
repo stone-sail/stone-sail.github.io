@@ -30,7 +30,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://stone-sail.github.io/images/leetcode-framework/IMG_20220723-182345788.png">
 <meta property="article:published_time" content="2022-06-27T14:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-25T07:04:07.091Z">
+<meta property="article:modified_time" content="2023-01-30T09:07:40.082Z">
 <meta property="article:author" content="Stone-Sail">
 <meta property="article:tag" content="algorithm">
 <meta property="article:tag" content="leetcode">
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-01-25 15:04:07" itemprop="dateModified" datetime="2023-01-25T15:04:07+08:00">2023-01-25</time>
+                <time title="Modified: 2023-01-30 17:07:40" itemprop="dateModified" datetime="2023-01-30T17:07:40+08:00">2023-01-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,14 +262,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.3k</span>
+              <span>8.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -371,12 +371,65 @@
 <p>全部统一成两端都闭</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">int binary_search(const std::vector&lt;int&gt;&amp; array, int target) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line"></span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size() - 1;</span><br><span class="line">  while (left &lt;= right) &#123;</span><br><span class="line">    int mid = left + (right - left) / 2;</span><br><span class="line">    </span><br><span class="line">    if (array[mid] == target) &#123;</span><br><span class="line">      return mid;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (array[mid] &lt; target) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      right = mid - 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int left_bound(const std::vector&lt;int&gt;&amp; array, int target) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line"></span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size() - 1;</span><br><span class="line">  while (left &lt;= right) &#123;</span><br><span class="line">    if (array[mid] == target) &#123;</span><br><span class="line">      right = mid - 1;  // attention</span><br><span class="line">    &#125; else if (array[mid] &lt; target) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else if (array[mid] &gt; target) &#123;</span><br><span class="line">      right = mid - 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // attention</span><br><span class="line">  // 最后要检查 left 越界的情况</span><br><span class="line">  if (left &gt;= nums.length || nums[left] != target) return -1;</span><br><span class="line"></span><br><span class="line">  return left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int right_bound(const std::vector&lt;int&gt;&amp; array, int target) &#123;</span><br><span class="line">  if (array.empty()) return -1;</span><br><span class="line"></span><br><span class="line">  int left = 0;</span><br><span class="line">  int right = array.size() - 1;</span><br><span class="line">  while (left &lt;= right) &#123;</span><br><span class="line">    if (array[mid] == target) &#123;</span><br><span class="line">      left = mid +1 1;   // attention</span><br><span class="line">    &#125; else if (array[mid] &lt; target) &#123;</span><br><span class="line">      left = mid + 1;</span><br><span class="line">    &#125; else if (array[mid] &gt; target) &#123;</span><br><span class="line">      right = mid - 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // attention</span><br><span class="line">  // 最后要检查 left 越界的情况</span><br><span class="line">  if (right &lt; 0 || nums[right] != target) return -1;</span><br><span class="line"></span><br><span class="line">  return right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="7-单调栈"><a href="#7-单调栈" class="headerlink" title="7. 单调栈"></a>7. 单调栈</h2><p>单调栈实际上就是栈，只是利用了一些巧妙的逻辑，使得每次新元素入栈后，栈内的元素都保持有序（单调递增或单调递减）。<br>单调栈用途不太广泛，只处理一种典型的问题，叫做 Next Greater Element。本文用讲解单调队列的算法模版解决这类问题，并且探讨处理「循环数组」的策略。</p>
+<h3 id="7-1-单调栈模板"><a href="#7-1-单调栈模板" class="headerlink" title="7.1 单调栈模板"></a>7.1 单调栈模板</h3><p>给你一个数组 nums，请你返回一个等⻓的结果数组，结果数组中对应索引存储着下一个更大元素，如果没有 更大的元素，就存 -1。 函数签名如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums); </span><br><span class="line"></span><br><span class="line">比如说，输入一个数组 nums = [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。 解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数是 4; 4 后面没有比 4 大的数，填 -1；3 后面没有比 3 大的数，填 -1。 </span><br></pre></td></tr></table></figure>
 
+<p>这个问题可以这样抽象思考：把数组的元素想象成并列站立的人，元素大小想象成人的身高。这些人面对你 站成一列，如何求元素「2」的 Next Greater Number 呢？ </p>
+<p>很简单，如果能够看到元素「2」，那么他后面可⻅的第一个人就是「2」的 Next Greater Number，因为比 「2」小的元素身高不够，都被「2」挡住了，第一个露出来的就是答案。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">  vector&lt;int&gt; res(nums.size()); // 存放答案的数组 </span><br><span class="line">  stack&lt;int&gt; s; </span><br><span class="line">  // 倒着往栈里放 </span><br><span class="line">  for (int i = nums.size() - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">    // 判定个子高矮 </span><br><span class="line">    while (!s.empty() &amp;&amp; s.top() &lt;= nums[i]) &#123;</span><br><span class="line">      // 矮个起开，反正也被挡着了。。。</span><br><span class="line">      s.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    // nums[i] 身后的 next great number </span><br><span class="line">    res[i] = s.empty() ? -1 : s.top(); </span><br><span class="line">    s.push(nums[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><a href="/2023/01/26/leetcode/leetcode_239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/" title="239. 滑动窗口最大值">239. 滑动窗口最大值</a></li>
+<li><a href="/2023/01/26/leetcode/leetcode_503-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0II/" title="503. 下一个更大元素II">503. 下一个更大元素II</a></li>
+</ul>
+<h3 id="7-2-去除重复字母"><a href="#7-2-去除重复字母" class="headerlink" title="7.2 去除重复字母"></a>7.2 去除重复字母</h3><p>参考： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Yq49ZBEW3DJx6nXk1fMusw">https://mp.weixin.qq.com/s/Yq49ZBEW3DJx6nXk1fMusw</a></p>
+<ul>
+<li><a href="/2023/01/26/leetcode/leetcode_316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D/" title="316. 去除重复字母">316. 去除重复字母</a></li>
+</ul>
+<hr>
+<p>以下是数据结构</p>
+<h2 id="8-LRU算法"><a href="#8-LRU算法" class="headerlink" title="8. LRU算法"></a>8. LRU算法</h2><ul>
+<li><a href="/2023/01/26/leetcode/leetcode_146-LRU%E7%BC%93%E5%AD%98/" title="146. LRU缓存">146. LRU缓存</a></li>
+</ul>
+<p>可以参考lfu算法</p>
+<h2 id="9-优先级队列"><a href="#9-优先级队列" class="headerlink" title="9. 优先级队列"></a>9. 优先级队列</h2><ul>
+<li><a href="/2023/01/26/leetcode/leetcode_295-%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" title="295. 数据流的中位数">295. 数据流的中位数</a>
+参考： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/oklQN_xjYy--_fbFkd9wMg">https://mp.weixin.qq.com/s/oklQN_xjYy--_fbFkd9wMg</a></li>
+</ul>
+<h2 id="10-二叉树"><a href="#10-二叉树" class="headerlink" title="10. 二叉树"></a>10. 二叉树</h2><p>我们公众号的成名之作 学习数据结构和算法的框架思维 中多次强调，先刷二叉树的题目，先刷二叉树的题 目，先刷二叉树的题目，因为很多经典算法，以及我们前文讲过的所有回溯、动归、分治算法，其实都是树 的问题，而树的问题就永远逃不开树的递归遍历框架这几行破代码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 二叉树遍历框架 */ </span><br><span class="line">void traverse(TreeNode root) &#123;</span><br><span class="line">  // 前序遍历 </span><br><span class="line">  traverse(root.left) </span><br><span class="line">  // 中序遍历 </span><br><span class="line">  traverse(root.right) </span><br><span class="line">  // 后序遍历 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="10-1-二叉树的重要性"><a href="#10-1-二叉树的重要性" class="headerlink" title="10.1 二叉树的重要性"></a>10.1 二叉树的重要性</h3><p>举个例子，比如说我们的经典算法「快速排序」和「归并排序」，对于这两个算法，你有什么理解？如果你 告诉我，快速排序就是个二叉树的前序遍历，归并排序就是个二叉树的后序遍历，那么我就知道你是个算法 高手了。 为什么快速排序和归并排序能和二叉树扯上关系？我们来简单分析一下他们的算法思想和代码框架：</p>
+<p>快速排序的逻辑是，若要对 nums[lo..hi] 进行排序，我们先找一个分界点 p，通过交换元素使得 nums[lo..p-1] 都小于等于 nums[p]，且 nums[p+1..hi] 都大于 nums[p]，然后递归地去 nums[lo..p-1] 和 nums[p+1..hi] 中寻找新的分界点，最后整个数组就被排序了。 快速排序的代码框架如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void sort(int[] nums, int lo, int hi) &#123; </span><br><span class="line">  /****** 前序遍历位置 ******/ </span><br><span class="line">  // 通过交换元素构建分界点 p </span><br><span class="line">  int p = partition(nums, lo, hi); </span><br><span class="line">  /************************/ </span><br><span class="line">  sort(nums, lo, p - 1); </span><br><span class="line">  sort(nums, p + 1, hi); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>先构造分界点，然后去左右子数组构造分界点，你看这不就是一个二叉树的前序遍历吗？ </p>
+<p>再说说归并排序的逻辑，若要对 nums[lo..hi] 进行排序，我们先对 nums[lo..mid] 排序，再对 nums[mid+1..hi] 排序，最后把这两个有序的子数组合并，整个数组就排好序了。 </p>
+<p>归并排序的代码框架如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void sort(int[] nums, int lo, int hi) &#123; </span><br><span class="line">  int mid = (lo + hi) / 2; </span><br><span class="line">  sort(nums, lo, mid); </span><br><span class="line">  sort(nums, mid + 1, hi); </span><br><span class="line">  /****** 后序遍历位置 ******/ </span><br><span class="line">  // 合并两个排好序的子数组 </span><br><span class="line">  merge(nums, lo, mid, hi); </span><br><span class="line">  /************************/ </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="7-其他"><a href="#7-其他" class="headerlink" title="7. 其他"></a>7. 其他</h2><ul>
+<p>先对左右子数组排序，然后合并（类似合并有序链表的逻辑），你看这是不是二叉树的后序遍历框架？另 外，这不就是传说中的分治算法嘛，不过如此呀。 </p>
+<p>如果你一眼就识破这些排序算法的底细，还需要背这些算法代码吗？这不是手到擒来，从框架慢慢扩展就能 写出算法了。 </p>
+<p>说了这么多，旨在说明，二叉树的算法思想的运用广泛，甚至可以说，只要涉及递归，都可以抽象成二叉树 的问题</p>
+<h3 id="10-2-写递归算法的秘诀"><a href="#10-2-写递归算法的秘诀" class="headerlink" title="10.2 写递归算法的秘诀"></a>10.2 写递归算法的秘诀</h3><p>我们前文 二叉树的最近公共祖先 写过，写递归算法的关键是要明确函数的「定义」是什么，然后相信这个定 义，利用这个定义推导最终结果，绝不要跳入递归的细节。</p>
+<p>怎么理解呢，我们用一个具体的例子来说，比如说让你计算一棵二叉树共有几个节点： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 定义：count(root) 返回以 root 为根的树有多少节点 </span><br><span class="line">int count(TreeNode root) &#123; </span><br><span class="line">  // base case </span><br><span class="line">  if (root == null) return 0;</span><br><span class="line">  // 自己加上子树的节点数就是整棵树的节点数 </span><br><span class="line">  return 1 + count(root.left) + count(root.right); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个问题非常简单，大家应该都会写这段代码，root 本身就是一个节点，加上左右子树的节点数就是以 root 为根的树的节点总数。 左右子树的节点数怎么算？</p>
+<p>其实就是计算根为 root.left 和 root.right 两棵树的节点数呗，按照定义， 递归调用 count 函数即可算出来。 </p>
+<p>写树相关的算法，简单说就是，先搞清楚当前 root 节点「该做什么」以及「什么时候做」，然后根据函数 定义递归调用子节点，递归调用会让孩子节点做相同的事情。 </p>
+<p>所谓「该做什么」就是让你想清楚写什么代码能够实现题目想要的效果，所谓「什么时候做」，就是让你思 考这段代码到底应该写在前序、中序还是后序遍历的代码位置上。</p>
+<p>二叉搜索树（简写作 BST）的性质: 简单说就是「左小右大」，对于每个节点，整棵左子 树都比该节点的值小， 整棵右子树都比该节点的值大。 另外： 按照 BST 的定义，任何一个单独的节点肯定是 BST</p>
+<p>BST 是一种特殊的二叉树，你只要记住它的两个主要特点：<br>1、左小右大，即每个节点的左子树都比当前节点的值小，右子树都比当前节点的值大。<br>2、中序遍历结果是有序的。 </p>
+<ul>
+<li><a href="/2023/01/26/leetcode/leetcode_236-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" title="236. 二叉树的最近公共祖先">236. 二叉树的最近公共祖先</a></li>
+<li><a href="/2023/01/26/leetcode/leetcode_ds_%E4%BA%8C%E5%8F%89%E6%A0%91/" title="ds. 二叉树">ds. 二叉树</a></li>
+</ul>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/izZ5uiWzTagagJec6Y7RvQ">东哥手把手带你刷二叉树（第一期）</a ></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OlpaDhPDTJlQ5MJ8tsARlA">东哥手把手带你刷二叉树（第二期）</a ></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/LJbpo49qppIeRs-FbgjsSQ">东哥手把手带你刷二叉树（第三期）</a ></p>
+<h2 id="11-其他"><a href="#11-其他" class="headerlink" title="11. 其他"></a>11. 其他</h2><ul>
 <li><a href="/2022/06/27/leetcode/leetcode_2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="2. 两数相加">2. 两数相加</a></li>
 </ul>
 
@@ -415,12 +468,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" rel="prev" title="19. 删除链表的倒数第N个节点">
-      <i class="fa fa-chevron-left"></i> 19. 删除链表的倒数第N个节点
+    <a href="/2022/06/25/c++%E6%9C%89%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/" rel="prev" title="c++有用的工具网站">
+      <i class="fa fa-chevron-left"></i> c++有用的工具网站
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/06/27/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2022/06/27/leetcode/leetcode_19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" rel="next" title="19. 删除链表的倒数第N个节点">
+      19. 删除链表的倒数第N个节点 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -487,7 +540,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">1. 二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.1 前序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.2 中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.3 后序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-linked-list"><span class="nav-text">2. linked list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">3. 前缀和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84"><span class="nav-text">4. 差分数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-text">5. 滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-text">6. 二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%85%B6%E4%BB%96"><span class="nav-text">7. 其他</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">1. 二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.1 前序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.2 中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">1.3 后序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-linked-list"><span class="nav-text">2. linked list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">3. 前缀和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84"><span class="nav-text">4. 差分数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-text">5. 滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-text">6. 二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-text">7. 单调栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%8D%95%E8%B0%83%E6%A0%88%E6%A8%A1%E6%9D%BF"><span class="nav-text">7.1 单调栈模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D"><span class="nav-text">7.2 去除重复字母</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-LRU%E7%AE%97%E6%B3%95"><span class="nav-text">8. LRU算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97"><span class="nav-text">9. 优先级队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">10. 二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-text">10.1 二叉树的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-%E5%86%99%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E7%9A%84%E7%A7%98%E8%AF%80"><span class="nav-text">10.2 写递归算法的秘诀</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%85%B6%E4%BB%96"><span class="nav-text">11. 其他</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -503,7 +556,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -516,7 +569,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -555,12 +608,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">31k</span>
+    <span title="Symbols count total">58k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">28 mins.</span>
+    <span title="Reading time total">53 mins.</span>
 </div>
 
         
